@@ -1,28 +1,27 @@
 {
-  "mowang:Strike": {
+  "mowang:strike": {
     "NAME": "打击",
-    "DESCRIPTION": "造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 造成 !D! 点伤害。给予 !M! 层 examplemod:恐惧 。"
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "mowang:defence": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点格挡 。"
   },
   "mowang:geishimo": {
     "NAME": "给使魔",
     "DESCRIPTION": "给 !M! 使魔。"
   },
-  "mowang:zhaohui": {
+  "mowang:callBack": {
     "NAME": "召回",
     "DESCRIPTION": " 召回。"
   },
-  "mowang:xingdong": {
+  "mowang:action": {
     "NAME": "行动",
     "DESCRIPTION": " 行动。"
   },
-  "mowang:daji": {
-    "NAME": "打击",
-    "DESCRIPTION": "造成 !D! 点伤害。"
-  },
-  "mowang:fangyu": {
-    "NAME": "防御",
-    "DESCRIPTION": "获得 !B! 点格挡 。"
+  "mowang:march": {
+    "NAME": "进军",
+    "DESCRIPTION": " 进军。"
   },
   "mowang:": {
     "NAME": "",

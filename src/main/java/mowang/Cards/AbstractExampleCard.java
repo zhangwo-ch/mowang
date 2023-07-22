@@ -30,7 +30,7 @@ public abstract class AbstractExampleCard extends CustomCard {
     }
     // 如果按这个方法实现，在cards文件夹下分别放test_attack.png、test_power.png、test_skill.png即可
     private static String GetTmpImgPath() {
-        return "ModExampleResources/img/cards/strike_attack.png";
+        return "ModExampleResources/img/cards/Strike_attack.png";
     }
 
     // 如果实现这个方法，只要将相应类型的卡牌丢进相应文件夹即可，如攻击牌卡图添加进img/cards/attack/下

@@ -17,8 +17,10 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Characters.MyCharacter;
+import mowang.Helpers.ModHelper;
 
 import java.nio.charset.StandardCharsets;
 
@@ -31,7 +33,9 @@ public class ExampleMod implements
         EditStringsSubscriber,
         EditCharactersSubscriber,
         EditRelicsSubscriber,
-        EditKeywordsSubscriber {
+        EditKeywordsSubscriber,
+        OnPlayerTurnStartSubscriber
+{
 
     private static final String MY_CHARACTER_BUTTON = "ModExampleResources/img/char/Character_Button.png";
     // 人物选择界面的立绘
@@ -113,7 +117,7 @@ public class ExampleMod implements
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
         if (keywords != null) {
             for (Keyword keyword : keywords) {
-                BaseMod.addKeyword("examplemod", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
+                BaseMod.addKeyword("mowang", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
             }
         }
     }
@@ -129,5 +133,10 @@ public class ExampleMod implements
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "ModExampleResources/localization/" + lang + "/characters.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "ModExampleResources/localization/" + lang + "/relics.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "ModExampleResources/localization/" + lang + "/powers.json");
+    }
+
+    @Override
+    public void receiveOnPlayerTurnStart() {
+        ModHelper.hasReturn = false;
     }
 }

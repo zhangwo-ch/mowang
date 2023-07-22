@@ -12,9 +12,9 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import mowang.Helpers.ModHelper;
 
-public class servitorPower extends AbstractPower {
+public class ServitorPower extends AbstractPower {
     // 能力的ID
-    public static final String POWER_ID = ModHelper.MakePath(servitorPower.class.getSimpleName());
+    public static final String POWER_ID = ModHelper.MakePath(ServitorPower.class.getSimpleName());
     // 能力的本地化字段
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     // 能力的名称
@@ -24,7 +24,7 @@ public class servitorPower extends AbstractPower {
     private static final String PATH128 = "ModExampleResources/img/powers/Example84.png";
     private static final String PATH48 = "ModExampleResources/img/powers/Example32.png";
 
-    public servitorPower(AbstractCreature owner, int amt) {
+    public ServitorPower(AbstractCreature owner, int amt) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;

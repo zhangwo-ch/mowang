@@ -1,4 +1,4 @@
-package mowang.Cards.demo;
+package mowang.Cards.Skill;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,27 +9,23 @@ import mowang.Cards.AbstractExampleCard;
 import mowang.Helpers.ModHelper;
 import mowang.powers.ServitorPower;
 
-import static com.megacrit.cardcrawl.cards.AbstractCard.CardType.ATTACK;
-
-public class geishimo extends AbstractExampleCard {
-    public static final String ID = ModHelper.MakePath(geishimo.class.getSimpleName());
+public class Devisummon extends AbstractExampleCard {
+    public static final String ID = ModHelper.MakePath(Devisummon.class.getSimpleName());
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public geishimo() {
-        super(ID, true,
-                cardStrings, 1, ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
-        setupMagicNumber(6);
+    public Devisummon() {
+        super(ID, Devisummon.class.getSimpleName(),
+                cardStrings, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.ENEMY);
+        setupMagicNumber(4);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToPlayer(new ServitorPower(p,magicNumber));
         this.addToBot(new ApplyPowerAction(m,p,new ServitorPower(m,magicNumber)));
     }
-
     @Override
     public void limitedUpgrade() {
         super.limitedUpgrade();
-        upgradeMagicNumber(3);
+        upgradeMagicNumber(2);
     }
 }

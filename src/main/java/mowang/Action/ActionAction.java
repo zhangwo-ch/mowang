@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import mowang.powers.servitorPower;
+import mowang.powers.ServitorPower;
 
 import java.util.Iterator;
 
@@ -20,8 +20,8 @@ public class ActionAction extends AbstractGameAction {
         while(var3.hasNext()) {
             AbstractMonster mo = (AbstractMonster)var3.next();
             if (!mo.isDead && !mo.isDying) {
-                if (mo.hasPower(servitorPower.POWER_ID)){
-                    this.addToBot(new DamageAction(mo,new DamageInfo(AbstractDungeon.player, mo.getPower(servitorPower.POWER_ID).amount,DamageInfo.DamageType.THORNS)));
+                if (mo.hasPower(ServitorPower.POWER_ID)){
+                    this.addToBot(new DamageAction(mo,new DamageInfo(AbstractDungeon.player, mo.getPower(ServitorPower.POWER_ID).amount,DamageInfo.DamageType.THORNS)));
                 }
             }
         }

@@ -1,27 +1,124 @@
 {
-  "mowang:strike": {
+  "mowang:geishimo": {
+  "NAME": "给使魔",
+  "DESCRIPTION": "给 !M! 使魔。"
+  },
+  "mowang:callBack": {
+  "NAME": "召回",
+  "DESCRIPTION": " mowang:召回 。"
+  },
+  "mowang:action": {
+  "NAME": "行动",
+  "DESCRIPTION": " mowang:行动 。"
+  },
+  "mowang:march": {
+  "NAME": "进军",
+  "DESCRIPTION": " mowang:进军。"
+  },
+  "mowang:Lantern\n": {
+    "NAME": "明灯\n",
+    "DESCRIPTION": "获得 !B! 点 格挡 ，抽1张牌。 NL 消耗 。\n",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ， 预见 !M! ，抽1张牌。 NL 消耗 。\n"
+  },
+  "mowang:Strike": {
     "NAME": "打击",
     "DESCRIPTION": "造成 !D! 点伤害。"
   },
-  "mowang:defence": {
+  "mowang:Defence": {
     "NAME": "防御",
-    "DESCRIPTION": "获得 !B! 点格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
   },
-  "mowang:geishimo": {
-    "NAME": "给使魔",
-    "DESCRIPTION": "给 !M! 使魔。"
+  "mowang:GatheringChop": {
+    "NAME": "聚魂斩 \n",
+    "DESCRIPTION": "造成 !D! 伤害。 mowang:回魂5 ：获得 !M! 点能量。\n"
   },
-  "mowang:callBack": {
-    "NAME": "召回",
-    "DESCRIPTION": " 召回。"
+  "mowang:Devisummon\n": {
+    "NAME": "恶魔召唤 \n",
+    "DESCRIPTION": "给予 !M! 使魔。\n"
   },
-  "mowang:action": {
-    "NAME": "行动",
-    "DESCRIPTION": " 行动。"
+  "mowang:SummoningChop\n": {
+    "NAME": "召魂斩\n",
+    "DESCRIPTION": "造成 !D! 伤害。使魔 进军 。 回魂6 ：抽 !M! 张牌。\n"
   },
-  "mowang:march": {
-    "NAME": "进军",
-    "DESCRIPTION": " 进军。"
+  "mowang:SealingChop": {
+    "NAME": "封魂斩\n",
+    "DESCRIPTION": "造成 !D! 伤害。使魔 进军 。 回魂7 ：从弃牌堆选择一张牌置入手牌。\n"
+  },
+  "mowang:ExpellingChop\n": {
+    "NAME": "驱魂斩\n",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 回魂9 ：使魔 行动 一次。\n"
+  },
+  "mowang:BurningChop\n": {
+    "NAME": "灼魂斩\n",
+    "DESCRIPTION": "造成 !D! 伤害2次。在弃牌堆中加入2张 灼伤 。回魂10：将弃牌堆中尽量多的 灼伤 置入手牌。\n"
+  },
+  "mowang:恶魔烈焰\n": {
+    "NAME": "Deviflame\n",
+    "DESCRIPTION": "对所有敌人造成 !D! 伤害，将2张 灼伤 置入弃牌堆。自愈：本次战斗内本卡耗能-1。\n"
+  },
+  "mowang:噩梦打击\n": {
+    "NAME": "NightmareStrike\n",
+    "DESCRIPTION": "造成 !D! 伤害。如果本回合内触发过回魂，获得 [E] [E] 。\n"
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTION": ""
   },
   "mowang:": {
     "NAME": "",

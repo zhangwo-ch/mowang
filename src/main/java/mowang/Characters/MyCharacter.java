@@ -17,8 +17,8 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import mowang.Cards.Attack.strike;
-import mowang.Cards.Skill.defence;
+import mowang.Cards.Attack.Strike;
+import mowang.Cards.Skill.Defence;
 import mowang.Cards.demo.action;
 import mowang.Cards.demo.geishimo;
 import mowang.Cards.demo.march;
@@ -83,11 +83,11 @@ public class MyCharacter extends CustomPlayer {
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(strike.ID);
+        retVal.add(Strike.ID);
         retVal.add(action.ID);
         retVal.add(geishimo.ID);
         retVal.add(march.ID);
-        retVal.add(defence.ID);
+        retVal.add(Defence.ID);
         return retVal;
     }
 
@@ -129,7 +129,7 @@ public class MyCharacter extends CustomPlayer {
     // 翻牌事件出现的你的职业牌（一般设为打击）
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new strike();
+        return new Strike();
     }
 
     // 卡牌轨迹颜色

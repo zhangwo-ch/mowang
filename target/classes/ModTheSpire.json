@@ -1,0 +1,12 @@
+{
+  "modid": "mowang",
+  "name": "mowang【魔王】",
+  "author_list": ["紅雲の結"],
+  "credits": "Basemod, ModTheSpire, #modding",
+  "description": "NULL",
+  "version": "1.1.1",
+  "sts_version": "01-23-2019",
+  "mts_version": "3.8.0",
+  "dependencies": ["basemod", "stslib"],
+  "update_json": ""
+}

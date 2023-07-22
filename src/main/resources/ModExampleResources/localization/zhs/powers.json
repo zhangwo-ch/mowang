@@ -1,0 +1,24 @@
+{
+  "mowang:ExamplePower": {
+    "NAME": "示例能力",
+    "DESCRIPTIONS": [
+      "当你受到 #y未被格挡 的攻击伤害时，回复 #b",
+      " 点生命。"
+    ]
+  },
+  "mowang:": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      ""
+    ]
+  },
+  "mowang:shimoPower": {
+    "NAME": "使魔",
+    "DESCRIPTIONS": [
+      "回合开始时受到 #b",
+      " 点伤害。死亡时，使魔转移给玩家。玩家的使魔等效于临时生命。",
+      "抵扣 #b",
+      " 点生命损失。"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "ExampleMod:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 造成 !D! 点伤害。给予 !M! 层 examplemod:恐惧 。"
+  },
+  "ExampleMod:daji": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "ExampleMod:fangyu": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点格挡 。"
+  },
+  "ExampleMod:": {
+    "NAME": "",
+    "DESCRIPTION": ""
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "ExampleMod:MyRelic": {
+    "NAME": "不起眼女主",
+    "FLAVOR": "随处可见的少女，普通的相貌，普通的成绩。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时， 关注度 - #b10"
+    ]
+  },
+  "ExampleMod:BaseRelic": {
+  "NAME": "普通人",
+  "FLAVOR": "",
+  "DESCRIPTIONS": [
+    "每场战斗开始时， 获得 #b100 关注度。"
+  ]
+}
+}

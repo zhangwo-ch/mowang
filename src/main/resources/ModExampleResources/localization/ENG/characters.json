@@ -1,0 +1,11 @@
+{
+  "ExampleMod:MyCharacter": {
+    "NAMES": [
+      "绝剑的魔王"
+    ],
+    "TEXT": [
+      "选人界面简介",
+      "我战胜了3层boss"
+    ]
+  }
+}

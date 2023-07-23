@@ -122,12 +122,12 @@ public class ExampleMod implements
         }
     }
     public void receiveEditStrings() {
+//        if (Settings.language == Settings.GameLanguage.ZHS) {
+//            lang = "zhs"; // 如果语言设置为简体中文，则加载ZHS文件夹的资源
+//        } else {
+//            lang = "ENG"; // 如果没有相应语言的版本，默认加载英语
+//        }
         String lang = "zhs";
-        if (Settings.language == Settings.GameLanguage.ZHS) {
-            lang = "zhs"; // 如果语言设置为简体中文，则加载ZHS文件夹的资源
-        } else {
-            lang = "ENG"; // 如果没有相应语言的版本，默认加载英语
-        }
         BaseMod.loadCustomStringsFile(CardStrings.class, "ModExampleResources/localization/" + lang + "/cards.json"); // 加载相应语言的卡牌本地化内容。
         // 如果是中文，加载的就是"ExampleResources/localization/ZHS/cards.json"
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "ModExampleResources/localization/" + lang + "/characters.json");

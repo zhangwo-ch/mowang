@@ -1,27 +1,105 @@
 {
-  "mowang:strike": {
+  "mowang:geishimo": {
+  "NAME": "给使魔",
+  "DESCRIPTION": "给 !M! 使魔。"
+  },
+  "mowang:callBack": {
+  "NAME": "召回",
+  "DESCRIPTION": " mowang:召回 。"
+  },
+  "mowang:action": {
+  "NAME": "行动",
+  "DESCRIPTION": " mowang:行动 。"
+  },
+  "mowang:march": {
+  "NAME": "进军",
+  "DESCRIPTION": " mowang:进军。"
+  },
+  "mowang:Lantern": {
+    "NAME": "明灯",
+    "DESCRIPTION": "获得 !B! 点 格挡 ，抽1张牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ， 预见 !M! ，抽1张牌。 NL 消耗 。"
+  },
+  "mowang:Strike": {
     "NAME": "打击",
     "DESCRIPTION": "造成 !D! 点伤害。"
   },
-  "mowang:defence": {
+  "mowang:Defence": {
     "NAME": "防御",
-    "DESCRIPTION": "获得 !B! 点格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
   },
-  "mowang:geishimo": {
-    "NAME": "给使魔",
-    "DESCRIPTION": "给 !M! 使魔。"
+  "mowang:GatheringChop": {
+    "NAME": "聚魂斩 ",
+    "DESCRIPTION": "造成 !D! 伤害。 mowang:回魂5 ：获得 !M! 点能量。"
   },
-  "mowang:callBack": {
-    "NAME": "召回",
-    "DESCRIPTION": " 召回。"
+  "mowang:Devisummon": {
+    "NAME": "恶魔召唤 ",
+    "DESCRIPTION": "给予 !M! 使魔。"
   },
-  "mowang:action": {
-    "NAME": "行动",
-    "DESCRIPTION": " 行动。"
+  "mowang:SummoningChop": {
+    "NAME": "召魂斩",
+    "DESCRIPTION": "造成 !D! 伤害。使魔 进军 。 回魂6 ：抽 !M! 张牌。"
   },
-  "mowang:march": {
-    "NAME": "进军",
-    "DESCRIPTION": " 进军。"
+  "mowang:SealingChop": {
+    "NAME": "封魂斩",
+    "DESCRIPTION": "造成 !D! 伤害。使魔 进军 。 回魂7 ：从弃牌堆选择一张牌置入手牌。"
+  },
+  "mowang:ExpellingChop": {
+    "NAME": "驱魂斩",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 回魂9 ：使魔 行动 一次。"
+  },
+  "mowang:BurningChop": {
+    "NAME": "灼魂斩",
+    "DESCRIPTION": "造成 !D! 伤害2次。在弃牌堆中加入2张 灼伤 。回魂10：将弃牌堆中尽量多的 灼伤 置入手牌。"
+  },
+  "mowang:Deviflame": {
+    "NAME": "恶魔烈焰",
+    "DESCRIPTION": "对所有敌人造成 !D! 伤害，将2张 灼伤 置入弃牌堆。自愈：本次战斗内本卡耗能-1。"
+  },
+  "mowang:NightmareStrike": {
+    "NAME": "噩梦打击",
+    "DESCRIPTION": "造成 !D! 伤害。如果本回合内触发过回魂，获得 [E] [E] 。"
+  },
+  "mowang:InsightStrike": {
+    "NAME": "视魂打击",
+    "DESCRIPTION": "造成 !D! 伤害。回魂6： 预见 !M! 。回魂12：抽1张牌。"
+  },
+  "mowang:FlameStrike": {
+    "NAME": "火焰打击",
+    "DESCRIPTION": "造成 !D! 伤害。回魂7：消耗弃牌堆至多 !M! 张牌。回魂14：并洗入 !M! 张明灯。"
+  },
+  "mowang:Deviconversation": {
+    "NAME": "恶魔交信",
+    "DESCRIPTION": "造成 !D! 伤害。消耗自身3层使魔，再攻击一次。"
+  },
+  "mowang:EternalConnection": {
+    "NAME": "亘古之绊",
+    "DESCRIPTION": "预见 !M! 。回魂8：获得等同于已损失生命值的格挡。回魂12：给予所有敌人 !M! 使魔。"
+  },
+  "mowang:DemonLookThrough": {
+    "NAME": "洞见的恶魔",
+    "DESCRIPTION": "如果目标意图是攻击，召回使魔，否则使魔进军。回魂13：给予 !M! 层 虚弱 。回魂23：获得 !M! 点 力量 。"
+  },
+  "mowang:SeeYouOtherside": {
+    "NAME": "思念的彼方",
+    "DESCRIPTION": "获得4（6）格挡。每次进入弃牌堆都令本卡本次战斗内数值+4（6）"
+  },
+  "mowang:WraithStar": {
+    "NAME": "恶灵星体",
+    "DESCRIPTION": "获得8（12）格挡。回魂8：将弃牌堆1张牌置入手牌。回魂24：这张牌本回合内耗能为0。"
+  },
+  "mowang:WraithLantern": {
+    "NAME": "恶灵灯火",
+    "DESCRIPTION": "预见 !M! ，在弃牌堆中加入1张 明灯 。自愈：手牌中加入一张明灯。",
+    "UPGRADE_DESCRIPTION": "预见 !M! ，在弃牌堆中加入2张 明灯 。自愈：手牌中加入一张明灯+。"
+  },
+  "mowang:Smell": {
+    "NAME": "灵敏嗅觉",
+    "DESCRIPTION": "预见3（4），获得3（4）格挡。"
+  },
+  "mowang:Devipower": {
+    "NAME": "恶魔之力",
+    "DESCRIPTION": "失去2生命。本回合内获得2（4）力量与敏捷。自愈：重置其它自愈卡。"
   },
   "mowang:": {
     "NAME": "",

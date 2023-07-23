@@ -33,6 +33,9 @@ public class ModHelper {
     //打印所有手牌
     public static AbstractCard GetMostLeftCard() {
         AbstractPlayer p = AbstractDungeon.player;
+        if (p == null){
+            return null;
+        }
         Iterator<AbstractCard> var = p.hand.group.iterator();
         while (var.hasNext()) {
             AbstractCard c = var.next();

@@ -80,25 +80,26 @@
     "NAME": "洞见的恶魔",
     "DESCRIPTION": "如果目标意图是攻击，召回使魔，否则使魔进军。回魂13：给予 !M! 层 虚弱 。回魂23：获得 !M! 点 力量 。"
   },
-  "mowang:": {
-    "NAME": "",
-    "DESCRIPTION": ""
+  "mowang:SeeYouOtherside\n": {
+    "NAME": "思念的彼方\n",
+    "DESCRIPTION": "获得4（6）格挡。每次进入弃牌堆都令本卡本次战斗内数值+4（6）\n"
   },
-  "mowang:": {
-    "NAME": "",
-    "DESCRIPTION": ""
+  "mowang:WraithStar\n": {
+    "NAME": "恶灵星体\n",
+    "DESCRIPTION": "获得8（12）格挡。回魂8：将弃牌堆1张牌置入手牌。回魂24：这张牌本回合内耗能为0。\n"
   },
-  "mowang:": {
-    "NAME": "",
-    "DESCRIPTION": ""
+  "mowang:WraithLantern\n": {
+    "NAME": "恶灵灯火\n",
+    "DESCRIPTION": "预见 !M! ，在弃牌堆中加入1张 明灯 。自愈：手牌中加入一张明灯。\n",
+    "UPGRADE_DESCRIPTION": "预见 !M! ，在弃牌堆中加入2张 明灯 。自愈：手牌中加入一张明灯+。\n"
   },
-  "mowang:": {
-    "NAME": "",
-    "DESCRIPTION": ""
+  "mowang:Smell\n": {
+    "NAME": "灵敏嗅觉\n",
+    "DESCRIPTION": "预见3（4），获得3（4）格挡。\n"
   },
-  "mowang:": {
-    "NAME": "",
-    "DESCRIPTION": ""
+  "mowang:Devipower\n": {
+    "NAME": "恶魔之力\n",
+    "DESCRIPTION": "失去2生命。本回合内获得2（4）力量与敏捷。自愈：重置其它自愈卡。\n"
   },
   "mowang:": {
     "NAME": "",

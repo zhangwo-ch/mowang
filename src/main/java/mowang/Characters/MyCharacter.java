@@ -19,9 +19,9 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import mowang.Cards.Attack.Strike;
 import mowang.Cards.Skill.Defence;
-import mowang.Cards.demo.action;
-import mowang.Cards.demo.geishimo;
-import mowang.Cards.demo.march;
+import mowang.demo.action;
+import mowang.demo.geishimo;
+import mowang.demo.march;
 import mowang.ModCore.ExampleMod;
 
 import java.util.ArrayList;

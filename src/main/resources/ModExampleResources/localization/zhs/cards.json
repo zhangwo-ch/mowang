@@ -70,7 +70,7 @@
   },
   "mowang:Deviconversation": {
     "NAME": "恶魔交信",
-    "DESCRIPTION": "造成 !D! 伤害。消耗自身3层使魔，再攻击一次。"
+    "DESCRIPTION": "造成 !D! 伤害。消耗自身3层 使魔 ，再攻击一次。"
   },
   "mowang:EternalConnection": {
     "NAME": "亘古之绊",
@@ -82,11 +82,11 @@
   },
   "mowang:SeeYouOtherside": {
     "NAME": "思念的彼方",
-    "DESCRIPTION": "获得4（6）格挡。每次进入弃牌堆都令本卡本次战斗内数值+4（6）"
+    "DESCRIPTION": "获得 !B! 格挡。每次进入弃牌堆都令本卡本次战斗内数值+ !M! 。"
   },
   "mowang:WraithStar": {
     "NAME": "恶灵星体",
-    "DESCRIPTION": "获得8（12）格挡。回魂8：将弃牌堆1张牌置入手牌。回魂24：这张牌本回合内耗能为0。"
+    "DESCRIPTION": "获得 !B! 格挡。回魂8：将弃牌堆1张牌置入手牌。回魂24：这张牌本回合内耗能为0。"
   },
   "mowang:WraithLantern": {
     "NAME": "恶灵灯火",
@@ -95,11 +95,11 @@
   },
   "mowang:Smell": {
     "NAME": "灵敏嗅觉",
-    "DESCRIPTION": "预见3（4），获得3（4）格挡。"
+    "DESCRIPTION": "预见 !M! ，获得 !B! 格挡。"
   },
   "mowang:Devipower": {
     "NAME": "恶魔之力",
-    "DESCRIPTION": "失去2生命。本回合内获得2（4）力量与敏捷。自愈：重置其它自愈卡。"
+    "DESCRIPTION": "失去2生命。本回合内获得 !M! 点 力量 与 敏捷 。自愈：重置其它自愈卡。"
   },
   "mowang:": {
     "NAME": "",

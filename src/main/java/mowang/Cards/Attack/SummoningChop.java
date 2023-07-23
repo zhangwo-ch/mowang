@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import mowang.Action.FetchAllBurnFromDisCardPileAction;
 import mowang.Action.MarchAction;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Helpers.ModHelper;
@@ -29,9 +30,7 @@ public class SummoningChop extends AbstractExampleCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageToEnemy(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         this.addToBot(new MarchAction(m));
-        if (ModHelper.CanReturn(6)){
-            this.addToBot(new DrawCardAction(magicNumber));
-        }
+        ModHelper.CanReturn(6,new DrawCardAction(magicNumber));
     }
     @Override
     public void limitedUpgrade() {

@@ -29,12 +29,8 @@ public class FlameStrike extends AbstractExampleCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageToEnemy(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        if (ModHelper.CanReturn(7)){
-            this.addToBot(new ExhaustDisCardPileCardAction(magicNumber));
-        }
-        if (ModHelper.CanReturn(14)){
-            this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(), magicNumber, true, true));
-        }
+        ModHelper.CanReturn(7,new ExhaustDisCardPileCardAction(magicNumber));
+        ModHelper.CanReturn(14,new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(), magicNumber, true, true));
     }
 
     @Override

@@ -1,9 +1,11 @@
 package mowang.Helpers;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import javax.swing.*;
 import java.util.Iterator;
 
 import static basemod.BaseMod.logger;
@@ -21,15 +23,23 @@ public class ModHelper {
         return IMG_PATH;
     }
 
-    public static Boolean CanReturn(int magicNumber) {
+    public static Boolean CanReturn(int magicNumber, AbstractGameAction action) {
         AbstractPlayer p = AbstractDungeon.player;
         if (p.discardPile.group.size() >= magicNumber){
             hasReturn = true;
+            AbstractDungeon.actionManager.addToBottom(action);
             return true;
         }
         return false;
     }
-
+//    public static Boolean CanReturn(int magicNumber) {
+//        AbstractPlayer p = AbstractDungeon.player;
+//        if (p.discardPile.group.size() >= magicNumber){
+//            hasReturn = true;
+//            return true;
+//        }
+//        return false;
+//    }
     //打印所有手牌
     public static AbstractCard GetMostLeftCard() {
         AbstractPlayer p = AbstractDungeon.player;

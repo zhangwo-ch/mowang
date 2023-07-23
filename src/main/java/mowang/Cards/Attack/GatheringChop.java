@@ -1,6 +1,7 @@
 package mowang.Cards.Attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -26,9 +27,7 @@ public class GatheringChop extends AbstractExampleCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageToEnemy(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        if (ModHelper.CanReturn(5)){
-            this.addToBot(new GainEnergyAction(magicNumber));
-        }
+        ModHelper.CanReturn(5,new GainEnergyAction(magicNumber));
     }
 
 

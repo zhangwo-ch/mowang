@@ -2,6 +2,8 @@ package mowang.Cards.Skill;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -30,17 +32,19 @@ public class DemonLookThrough extends AbstractExampleCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DemonLookAction(m));
-        if (ModHelper.CanReturn(13)){
-            Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+        ModHelper.CanReturn(13,new AbstractGameAction() {
+            @Override
+            public void update() {
+                Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
 
-            while(var3.hasNext()) {
-                AbstractMonster mo = (AbstractMonster)var3.next();
-                this.addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                while(var3.hasNext()) {
+                    AbstractMonster mo = (AbstractMonster)var3.next();
+                    this.addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                }
             }
         }
-        if (ModHelper.CanReturn(23)){
-            applyToPlayer(new StrengthPower(p,magicNumber));
-        }
+        );
+        ModHelper.CanReturn(23,new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(p,magicNumber)));
     }
     @Override
     public void limitedUpgrade() {

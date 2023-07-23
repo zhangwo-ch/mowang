@@ -2,6 +2,7 @@ package mowang.Cards.Attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -28,12 +29,8 @@ public class InsightStrike extends AbstractExampleCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageToEnemy(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         this.addToBot(new MarchAction(m));
-        if (ModHelper.CanReturn(6)){
-            this.addToBot(new ScryAction(this.magicNumber));
-        }
-        if (ModHelper.CanReturn(12)){
-            this.addToBot(new DrawCardAction(1));
-        }
+        ModHelper.CanReturn(6,new ScryAction(magicNumber));
+        ModHelper.CanReturn(12,new DrawCardAction(1));
     }
     @Override
     public void limitedUpgrade() {

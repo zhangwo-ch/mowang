@@ -4,6 +4,7 @@ mowang\Cards\Skill\Devisummon.class
 mowang\demo\march.class
 mowang\Action\MarchAction.class
 mowang\Action\GiveAllEnemyServitorAction.class
+mowang\Cards\Skill\DemonLookThrough$1.class
 mowang\Action\ActionAction.class
 mowang\Cards\Skill\DemonLookThrough.class
 mowang\Characters\MyCharacter.class

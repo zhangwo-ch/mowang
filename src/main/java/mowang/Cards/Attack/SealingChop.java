@@ -3,6 +3,7 @@ package mowang.Cards.Attack;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -27,9 +28,7 @@ public class SealingChop extends AbstractExampleCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageToEnemy(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         this.addToBot(new MarchAction(m));
-        if (ModHelper.CanReturn(7)){
-            this.addToBot(new BetterDiscardPileToHandAction(1));
-        }
+        ModHelper.CanReturn(7,new BetterDiscardPileToHandAction(1));
     }
     @Override
     public void limitedUpgrade() {

@@ -25,9 +25,7 @@ public class BurningChop extends AbstractExampleCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageToEnemy(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        if (ModHelper.CanReturn(10)){
-            this.addToBot(new FetchAllBurnFromDisCardPileAction());
-        }
+        ModHelper.CanReturn(10,new FetchAllBurnFromDisCardPileAction());
     }
     @Override
     public void limitedUpgrade() {

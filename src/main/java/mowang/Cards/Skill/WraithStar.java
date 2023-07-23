@@ -3,8 +3,10 @@ package mowang.Cards.Skill;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import mowang.Action.GiveAllEnemyServitorAction;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Helpers.ModHelper;
 
@@ -21,11 +23,10 @@ public class WraithStar extends AbstractExampleCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         gainBlock();
-        if (ModHelper.CanReturn(24)){
-            this.addToBot(new BetterDiscardPileToHandAction(1,0));
-        }
-        else if (ModHelper.CanReturn(8)) {
-            this.addToBot(new BetterDiscardPileToHandAction(1));
+        if (p.discardPile.group.size() >= 24){
+            ModHelper.CanReturn(24,new BetterDiscardPileToHandAction(1,0));
+        } else {
+            ModHelper.CanReturn(8,new BetterDiscardPileToHandAction(1));
         }
     }
     @Override

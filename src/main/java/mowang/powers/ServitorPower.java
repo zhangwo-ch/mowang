@@ -63,7 +63,22 @@ public class ServitorPower extends AbstractPower {
         }
         return damageAmount;
     }
+    public void reducePower(int reduceAmount) {
+        this.fontScale = 8.0F;
+        this.amount -= reduceAmount;
+        if (this.amount == 0) {
+            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, NAME));
+        }
 
+        if (this.amount >= 999) {
+            this.amount = 999;
+        }
+
+        if (this.amount <= -999) {
+            this.amount = -999;
+        }
+
+    }
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }

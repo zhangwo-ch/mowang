@@ -30,12 +30,7 @@ public class GatheringChop extends AbstractExampleCard {
             this.addToBot(new GainEnergyAction(magicNumber));
         }
     }
-    public void triggerOnGlowCheck() {
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (ModHelper.CanReturn(5)){
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        }
-    }
+
 
     @Override
     public void limitedUpgrade() {

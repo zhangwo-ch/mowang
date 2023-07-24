@@ -1,5 +1,6 @@
 mowang\Cards\Attack\NightmareStrike.class
 mowang\Cards\Skill\EternalConnection.class
+mowang\Cards\Attack\ExterminatingChop$1.class
 mowang\Cards\Skill\Devisummon.class
 mowang\demo\march.class
 mowang\Action\MarchAction.class
@@ -12,12 +13,17 @@ mowang\Cards\Attack\SealingChop.class
 mowang\Cards\Skill\Defence.class
 mowang\Cards\Skill\Lantern.class
 mowang\Cards\Attack\ExpellingChop.class
+mowang\Cards\Skill\HellPact.class
 mowang\Cards\AbstractExampleCard.class
+mowang\Cards\Skill\BloodyPact.class
 mowang\Characters\MyCharacter$Enums.class
 mowang\Action\DemonLookAction.class
+mowang\Cards\Skill\FlamePact.class
 mowang\Cards\Attack\FlameStrike.class
+mowang\Cards\Attack\ExterminatingChop.class
 mowang\Action\CallBackAction.class
 mowang\Helpers\ModHelper.class
+mowang\Cards\Attack\AbsorbingChop.class
 mowang\demo\geishimo.class
 mowang\Action\FetchAllBurnFromDisCardPileAction.class
 mowang\Cards\Skill\Smell.class
@@ -31,9 +37,11 @@ mowang\Cards\Attack\InsightStrike.class
 mowang\Cards\Skill\SeeYouOtherside.class
 mowang\Cards\Attack\Deviflame.class
 mowang\Cards\Attack\GatheringChop.class
+mowang\Action\ReplaceBurnAction.class
 mowang\Cards\AbstractExampleCard$1.class
 mowang\Cards\Skill\Devipower.class
 mowang\Cards\Skill\WraithLantern.class
 mowang\Cards\Attack\BurningChop.class
 mowang\ModCore\ExampleMod.class
 mowang\Cards\Skill\WraithStar.class
+mowang\Cards\Attack\ExpellingChop$1.class

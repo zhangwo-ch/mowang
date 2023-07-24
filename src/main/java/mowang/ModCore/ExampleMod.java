@@ -34,7 +34,8 @@ public class ExampleMod implements
         EditCharactersSubscriber,
         EditRelicsSubscriber,
         EditKeywordsSubscriber,
-        OnPlayerTurnStartSubscriber
+        OnPlayerTurnStartSubscriber,
+        OnStartBattleSubscriber
 {
 
     private static final String MY_CHARACTER_BUTTON = "ModExampleResources/img/char/Character_Button.png";
@@ -138,5 +139,10 @@ public class ExampleMod implements
     @Override
     public void receiveOnPlayerTurnStart() {
         ModHelper.hasReturn = false;
+        ModHelper.ReturnCount = 0;
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
     }
 }

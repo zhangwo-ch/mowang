@@ -18,7 +18,7 @@ public class BurningChop extends AbstractExampleCard {
 
     public BurningChop() {
         super(ID, BurningChop.class.getSimpleName(),
-                cardStrings, 1, ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
+                cardStrings, 1, ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.setupDamage(7);
     }
 

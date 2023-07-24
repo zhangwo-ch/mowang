@@ -101,6 +101,26 @@
     "NAME": "恶魔之力",
     "DESCRIPTION": "失去2生命。本回合内获得 !M! 点 力量 与 敏捷 。自愈：重置其它自愈卡。"
   },
+  "mowang:HellPact": {
+    "NAME": "地狱契约",
+    "DESCRIPTION": "获得 !M! 点 能量。将至多 1 张手牌替换为 灼伤 。"
+  },
+  "mowang:BloodyPact": {
+    "NAME": "鲜血契约",
+    "DESCRIPTION": "失去 !M! 生命，使魔 行动 一次。自愈：使魔行动一次。"
+  },
+  "mowang:FlamePact": {
+    "NAME": "火焰契约",
+    "DESCRIPTION": "场上所有单位获得 !M! 使魔，将等于敌人数量的 灼伤 加入弃牌堆。自愈：任选1张牌 消耗 。"
+  },
+  "mowang:ExterminatingChop": {
+    "NAME": "灭魂斩",
+    "DESCRIPTION": "对所有敌人造成 !D! 伤害并给予 !M! 使魔。回魂8：获得 !M! 使魔。"
+  },
+  "mowang:AbsorbingChop": {
+    "NAME": "噬魂斩",
+    "DESCRIPTION": "造成 !D! 伤害。回魂19：如果造成未被格挡的伤害，获得 !M! 使魔。"
+  },
   "mowang:": {
     "NAME": "",
     "DESCRIPTION": ""

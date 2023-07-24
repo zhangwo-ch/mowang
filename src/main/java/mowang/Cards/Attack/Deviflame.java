@@ -12,6 +12,7 @@ import mowang.Cards.AbstractExampleCard;
 import mowang.Helpers.ModHelper;
 
 import static com.megacrit.cardcrawl.cards.AbstractCard.CardType.ATTACK;
+import static mowang.Characters.MyCharacter.Enums.Recovery;
 
 public class Deviflame extends AbstractExampleCard {
     public static final String ID = ModHelper.MakePath(Deviflame.class.getSimpleName());
@@ -22,6 +23,7 @@ public class Deviflame extends AbstractExampleCard {
                 cardStrings, 2, ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         this.setupDamage(15);
         isMultiDamage = true;
+        tags.add(Recovery);
     }
 
     @Override

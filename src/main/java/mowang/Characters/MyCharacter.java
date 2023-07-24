@@ -84,9 +84,6 @@ public class MyCharacter extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(Strike.ID);
-        retVal.add(action.ID);
-        retVal.add(geishimo.ID);
-        retVal.add(march.ID);
         retVal.add(Defence.ID);
         return retVal;
     }
@@ -227,7 +224,7 @@ public class MyCharacter extends CustomPlayer {
         @SpireEnum(name = "EXAMPLE_GREEN")
         public static CardLibrary.LibraryType EXAMPLE_LIBRARY;
         @SpireEnum
-        public static  AbstractCard.CardTags EMPTY;
+        public static  AbstractCard.CardTags Recovery;
 
     }
 }

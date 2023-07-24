@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Helpers.ModHelper;
 
+import static mowang.Characters.MyCharacter.Enums.Recovery;
+
 public class Devipower extends AbstractExampleCard {
     public static final String ID = ModHelper.MakePath(Devipower.class.getSimpleName());
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -22,6 +24,7 @@ public class Devipower extends AbstractExampleCard {
         super(ID, Devipower.class.getSimpleName(),
                 cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         setupMagicNumber(2);
+        tags.add(Recovery);
     }
 
     @Override
@@ -31,6 +34,11 @@ public class Devipower extends AbstractExampleCard {
         this.addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
+    }
+    @Override
+    public void update() {
+        super.update();
+        ModHelper.GetMostLeftCard();
     }
     @Override
     public void limitedUpgrade() {

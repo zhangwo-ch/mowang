@@ -30,7 +30,9 @@ public class MarchAction extends AbstractGameAction {
                 }
             }
         }
-        amount += AbstractDungeon.player.getPower(ServitorPower.POWER_ID).amount;
+        if (AbstractDungeon.player.hasPower(ServitorPower.POWER_ID)){
+            amount += AbstractDungeon.player.getPower(ServitorPower.POWER_ID).amount;
+        }
         this.addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player, ServitorPower.POWER_ID));
         if (amount!=0){
             this.addToBot(new ApplyPowerAction(target,AbstractDungeon.player,new ServitorPower(target,amount)));

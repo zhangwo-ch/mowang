@@ -11,6 +11,7 @@ import mowang.Action.ActionAction;
 import mowang.Action.MarchAction;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Helpers.ModHelper;
+import mowang.powers.ServitorPower;
 
 import static com.megacrit.cardcrawl.cards.AbstractCard.CardType.ATTACK;
 
@@ -28,7 +29,13 @@ public class ExpellingChop extends AbstractExampleCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageToAllEnemies(AbstractGameAction.AttackEffect.FIRE);
-        ModHelper.CanReturn(9,new ActionAction());
+        ModHelper.CanReturn(8, new AbstractGameAction() {
+            @Override
+            public void update() {
+                applyToPlayer(new ServitorPower(p,magicNumber));
+                isDone = true;
+            }
+        });
     }
     @Override
     public void limitedUpgrade() {

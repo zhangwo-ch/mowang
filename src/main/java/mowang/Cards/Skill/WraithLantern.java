@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Helpers.ModHelper;
 
+import static mowang.Characters.MyCharacter.Enums.Recovery;
+
 public class WraithLantern extends AbstractExampleCard {
     public static final String ID = ModHelper.MakePath(WraithLantern.class.getSimpleName());
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -18,16 +20,21 @@ public class WraithLantern extends AbstractExampleCard {
         super(ID, WraithLantern.class.getSimpleName(),
                 cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         setupMagicNumber(3);
+        tags.add(Recovery);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ScryAction(this.magicNumber));
         this.addToBot(new MakeTempCardInDiscardAction(new Lantern(),magicNumber-2));
-        // 自愈
-
-
     }
+
+    @Override
+    public void update() {
+        super.update();
+        ModHelper.GetMostLeftCard();
+    }
+
     @Override
     public void limitedUpgrade() {
         super.limitedUpgrade();

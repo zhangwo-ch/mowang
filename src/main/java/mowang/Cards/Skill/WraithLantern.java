@@ -6,10 +6,12 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import mowang.Action.AddLanternAction;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Cards.AbstractHealCard;
 import mowang.Helpers.ModHelper;
@@ -20,17 +22,12 @@ public class WraithLantern extends AbstractHealCard {
     public static final String ID = ModHelper.MakePath(WraithLantern.class.getSimpleName());
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
+    //这个实现不用第三个是因为在super中获取不到this
     public WraithLantern() {
         super(ID, WraithLantern.class.getSimpleName(),
-                cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE, new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        addToBot(new GainEnergyAction(1));
-                        addToBot(new MakeTempCardInHandAction(new Lantern(),1));
-                        isDone = true;
-                    }
-                });
+                cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         setupMagicNumber(3);
+        action = new AddLanternAction(this);
     }
 
     @Override
@@ -43,5 +40,6 @@ public class WraithLantern extends AbstractHealCard {
     public void limitedUpgrade() {
         super.limitedUpgrade();
         upgradeMagicNumber(1);
+        upgradeDescription(cardStrings);
     }
 }

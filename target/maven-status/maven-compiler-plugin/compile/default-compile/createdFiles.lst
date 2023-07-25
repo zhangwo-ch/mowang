@@ -1,8 +1,10 @@
 mowang\Cards\Attack\NightmareStrike.class
 mowang\Cards\Skill\EternalConnection.class
+mowang\Cards\AbstractHealCard$1.class
 mowang\Cards\Attack\ExterminatingChop$1.class
 mowang\Cards\Skill\Devisummon.class
 mowang\demo\march.class
+mowang\Cards\Skill\WraithLantern$1.class
 mowang\Action\MarchAction.class
 mowang\Action\GiveAllEnemyServitorAction.class
 mowang\Cards\Skill\DemonLookThrough$1.class
@@ -42,6 +44,7 @@ mowang\Cards\AbstractExampleCard$1.class
 mowang\Cards\Skill\Devipower.class
 mowang\Cards\Skill\WraithLantern.class
 mowang\Cards\Attack\BurningChop.class
+mowang\Cards\AbstractHealCard.class
 mowang\ModCore\ExampleMod.class
 mowang\Cards\Skill\WraithStar.class
 mowang\Cards\Attack\ExpellingChop$1.class

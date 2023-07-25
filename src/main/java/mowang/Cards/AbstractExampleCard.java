@@ -28,6 +28,7 @@ public abstract class AbstractExampleCard extends CustomCard {
         super(ID, strings.NAME, GetImgPath(TYPE, s), COST, strings.DESCRIPTION, TYPE,
                 color, RARITY, TARGET);
     }
+
     // 如果按这个方法实现，在cards文件夹下分别放test_attack.png、test_power.png、test_skill.png即可
     private static String GetTmpImgPath() {
         return "ModExampleResources/img/cards/Strike_attack.png";
@@ -112,7 +113,6 @@ public abstract class AbstractExampleCard extends CustomCard {
     }
 
     // 这里我们重写了upgrade方法，因为有重复代码，大多数时候都能简化（除了灼热攻击）
-    @Override
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();

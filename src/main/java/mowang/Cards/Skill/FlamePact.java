@@ -14,19 +14,20 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mowang.Action.GiveAllEnemyServitorAction;
 import mowang.Action.ReplaceBurnAction;
 import mowang.Cards.AbstractExampleCard;
+import mowang.Cards.AbstractHealCard;
 import mowang.Helpers.ModHelper;
 
 import java.util.Iterator;
 
 import static mowang.Characters.MyCharacter.Enums.Recovery;
 
-public class FlamePact extends AbstractExampleCard {
+public class FlamePact extends AbstractHealCard {
     public static final String ID = ModHelper.MakePath(FlamePact.class.getSimpleName());
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public FlamePact() {
         super(ID, FlamePact.class.getSimpleName(),
-                cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+                cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE,null);
         setupMagicNumber(3);
         tags.add(Recovery);
     }
@@ -45,11 +46,6 @@ public class FlamePact extends AbstractExampleCard {
             }
         }
         addToBot(new MakeTempCardInDiscardAction(new Burn(), count));
-    }
-    @Override
-    public void update() {
-        super.update();
-        ModHelper.GetMostLeftCard();
     }
     @Override
     public void limitedUpgrade() {

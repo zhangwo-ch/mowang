@@ -10,17 +10,18 @@ import mowang.Action.ActionAction;
 import mowang.Action.MarchAction;
 import mowang.Action.ReplaceBurnAction;
 import mowang.Cards.AbstractExampleCard;
+import mowang.Cards.AbstractHealCard;
 import mowang.Helpers.ModHelper;
 
 import static mowang.Characters.MyCharacter.Enums.Recovery;
 
-public class BloodyPact extends AbstractExampleCard {
+public class BloodyPact extends AbstractHealCard {
     public static final String ID = ModHelper.MakePath(BloodyPact.class.getSimpleName());
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public BloodyPact() {
         super(ID, BloodyPact.class.getSimpleName(),
-                cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+                cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE,null);
         setupMagicNumber(3);
         tags.add(Recovery);
     }
@@ -29,12 +30,6 @@ public class BloodyPact extends AbstractExampleCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHPAction(p,p,magicNumber));
         this.addToBot(new ActionAction());
-    }
-
-    @Override
-    public void update() {
-        super.update();
-        ModHelper.GetMostLeftCard();
     }
 
     @Override

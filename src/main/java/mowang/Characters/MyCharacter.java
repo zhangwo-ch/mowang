@@ -225,6 +225,8 @@ public class MyCharacter extends CustomPlayer {
         public static CardLibrary.LibraryType EXAMPLE_LIBRARY;
         @SpireEnum
         public static  AbstractCard.CardTags Recovery;
+        @SpireEnum
+        public static  AbstractCard.CardTags SIB;
 
     }
 }

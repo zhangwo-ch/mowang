@@ -16,7 +16,7 @@ import static mowang.Characters.MyCharacter.Enums.*;
 
 public abstract class AbstractHealCard extends AbstractExampleCard {
 
-    AbstractGameAction action;
+    public AbstractGameAction action;
     public Boolean hasRecovery;
     public AbstractHealCard(String ID, boolean useTmpArt, CardStrings strings, int COST, CardType TYPE,
                             CardRarity RARITY, CardTarget TARGET,AbstractGameAction action) {
@@ -26,6 +26,14 @@ public abstract class AbstractHealCard extends AbstractExampleCard {
         hasRecovery = false;
         tags.add(Recovery);
     }
+    public AbstractHealCard(String ID, String s, CardStrings strings, int COST, CardType TYPE,
+                            CardRarity RARITY, CardTarget TARGET) {
+        super(ID, s, strings, COST, TYPE,
+                RARITY, TARGET);
+        hasRecovery = false;
+        tags.add(Recovery);
+    }
+    // 通常用这个，你AE的最后一个参数加action就可以，简单action可以不用创建action文件夹中，用匿名
     public AbstractHealCard(String ID, String s, CardStrings strings, int COST, CardType TYPE,
                             CardRarity RARITY, CardTarget TARGET,AbstractGameAction action) {
         super(ID, s, strings, COST, TYPE,

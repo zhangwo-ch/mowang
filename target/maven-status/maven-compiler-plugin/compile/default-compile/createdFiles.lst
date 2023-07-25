@@ -4,7 +4,6 @@ mowang\Cards\AbstractHealCard$1.class
 mowang\Cards\Attack\ExterminatingChop$1.class
 mowang\Cards\Skill\Devisummon.class
 mowang\demo\march.class
-mowang\Cards\Skill\WraithLantern$1.class
 mowang\Action\MarchAction.class
 mowang\Action\GiveAllEnemyServitorAction.class
 mowang\Cards\Skill\DemonLookThrough$1.class
@@ -38,6 +37,7 @@ mowang\Action\ExhaustDisCardPileCardAction.class
 mowang\Cards\Attack\InsightStrike.class
 mowang\Cards\Skill\SeeYouOtherside.class
 mowang\Cards\Attack\Deviflame.class
+mowang\Action\AddLanternAction.class
 mowang\Cards\Attack\GatheringChop.class
 mowang\Action\ReplaceBurnAction.class
 mowang\Cards\AbstractExampleCard$1.class

@@ -57,17 +57,10 @@ public class ModHelper {
         if (p == null){
             return null;
         }
-        if (p.hand == null){
-            return null;
-        }
-        if (p.hand.group == null){
-            return null;
-        }
-        ArrayList<AbstractCard> group = p.hand.group;
-        for (AbstractCard c : group) {
+        for (AbstractCard c : p.hand.group) {
             if (c.hasTag(Recovery)) {
-                AbstractHealCard Rcard = (AbstractHealCard) c;
-                if (Rcard.hasRecovery){
+                AbstractHealCard ahc = (AbstractHealCard) c;
+                if (ahc.hasRecovery){
                     logger.info(c.name+"已自愈！！");
                     continue;
                 }
@@ -84,31 +77,23 @@ public class ModHelper {
         if (p == null){
             return null;
         }
-        if (p.hand == null){
-            return null;
-        }
-        if (p.hand.group == null){
-            return null;
-        }
-        ArrayList<AbstractCard> group = p.hand.group;
-        for (AbstractCard c : group) {
+        for (AbstractCard c : p.hand.group) {
             if (c.type== AbstractCard.CardType.STATUS) {
                 logger.info(c.name);
                 return c;
             }
         }
-
         logger.info("没有状态牌");
         return null;
     }
 
-    public static AbstractCard GetMostLeftCard(boolean t2heal_f2status) {
-        for(AbstractCard c : AbstractDungeon.player.hand.group) {
-            if((t2heal_f2status && c.hasTag(Recovery)) ||
-                    (!t2heal_f2status && c.type == AbstractCard.CardType.STATUS && !c.hasTag(SIB))) {
-                return c;
-            }
-        }
-        return null;
-    }
+//    public static AbstractCard GetMostLeftCard(boolean t2heal_f2status) {
+//        for(AbstractCard c : AbstractDungeon.player.hand.group) {
+//            if((t2heal_f2status && c.hasTag(Recovery)) ||
+//                    (!t2heal_f2status && c.type == AbstractCard.CardType.STATUS && !c.hasTag(SIB))) {
+//                return c;
+//            }
+//        }
+//        return null;
+//    }
 }

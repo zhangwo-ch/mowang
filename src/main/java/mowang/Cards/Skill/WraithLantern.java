@@ -25,7 +25,7 @@ public class WraithLantern extends AbstractHealCard {
     //这个实现不用第三个是因为在super中获取不到this
     public WraithLantern() {
         super(ID, WraithLantern.class.getSimpleName(),
-                cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+                cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE,null);
         setupMagicNumber(3);
         action = new AddLanternAction(this);
     }

@@ -2,6 +2,7 @@ package mowang.Cards.Attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
+import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -25,6 +26,7 @@ public class Deviflame extends AbstractHealCard {
         this.setupDamage(15);
         isMultiDamage = true;
         tags.add(Recovery);
+        action = new ReduceCostAction(this);
     }
 
     @Override

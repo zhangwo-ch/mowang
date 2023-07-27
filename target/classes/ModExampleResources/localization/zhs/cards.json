@@ -111,7 +111,7 @@
   },
   "mowang:FlamePact": {
     "NAME": "火焰契约",
-    "DESCRIPTION": "场上所有单位获得 !M! 使魔，将等于敌人数量的 灼伤 加入弃牌堆。自愈：任选1张牌 消耗 。"
+    "DESCRIPTION": "场上所有单位获得 !M! 使魔，将等于敌人数量的 灼伤 加入弃牌堆。自愈：本回合保留所有自愈牌 。"
   },
   "mowang:ExterminatingChop": {
     "NAME": "灭魂斩",

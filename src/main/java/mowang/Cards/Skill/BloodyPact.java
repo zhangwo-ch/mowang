@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mowang.Action.ActionAction;
 import mowang.Action.MarchAction;
 import mowang.Action.ReplaceBurnAction;
+import mowang.Action.ResetRecoveryAction;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Cards.AbstractHealCard;
 import mowang.Helpers.ModHelper;
@@ -24,6 +25,7 @@ public class BloodyPact extends AbstractHealCard {
                 cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE,null);
         setupMagicNumber(3);
         tags.add(Recovery);
+        action = new ActionAction();
     }
 
     @Override

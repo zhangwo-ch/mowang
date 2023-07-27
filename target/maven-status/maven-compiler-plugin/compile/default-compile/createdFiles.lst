@@ -1,6 +1,6 @@
+mowang\Cards\Skill\FlamePact$1.class
 mowang\Cards\Attack\NightmareStrike.class
 mowang\Cards\Skill\EternalConnection.class
-mowang\Cards\AbstractHealCard$1.class
 mowang\Cards\Attack\ExterminatingChop$1.class
 mowang\Cards\Skill\Devisummon.class
 mowang\demo\march.class
@@ -38,6 +38,7 @@ mowang\Cards\Attack\InsightStrike.class
 mowang\Cards\Skill\SeeYouOtherside.class
 mowang\Cards\Attack\Deviflame.class
 mowang\Action\AddLanternAction.class
+mowang\Action\ResetRecoveryAction.class
 mowang\Cards\Attack\GatheringChop.class
 mowang\Action\ReplaceBurnAction.class
 mowang\Cards\AbstractExampleCard$1.class

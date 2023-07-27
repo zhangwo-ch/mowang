@@ -42,38 +42,7 @@ public abstract class AbstractHealCard extends AbstractExampleCard {
         hasRecovery = false;
         tags.add(Recovery);
     }
-    public AbstractHealCard(String ID, String s, CardStrings strings, int COST, CardType TYPE, CardColor color,
-                            CardRarity RARITY, CardTarget TARGET) {
-        super(ID, s, strings, COST, TYPE, color,
-                RARITY, TARGET);
-    }
-    // 如果按这个方法实现，在cards文件夹下分别放test_attack.png、test_power.png、test_skill.png即可
-    private static String GetTmpImgPath() {
-        return "ModExampleResources/img/cards/Strike_attack.png";
-    }
-    private static String GetImgPath(CardType t, String name) {
-        String type;
-        switch (t) {
-            case ATTACK:
-                type = "attack";
-                break;
-            case POWER:
-                type = "power";
-                break;
-            case STATUS:
-                type = "status";
-                break;
-            case CURSE:
-                type = "curse";
-                break;
-            case SKILL:
-                type = "skill";
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + t);
-        }
-        return String.format("ModExampleResources/img/cards/%s_%s.png", name,type);
-    }
+
     @Override//这里是重点代码，这个绿色和蓝色不一定要加，拿来测试挺方便的
     public void triggerOnGlowCheck() {
         if(isTheLeftmost()) {//自己是不是最左的
@@ -89,6 +58,7 @@ public abstract class AbstractHealCard extends AbstractExampleCard {
         hasRecovery = false;
     }
 
+    // 思考，从性能上来考虑，是否应该先判断是否有状态牌才考虑自己是否是最左
     public boolean isTheLeftmost() {//判断是不是最左侧的卡
         AbstractCard c = ModHelper.GetMostLeftCard();
         if(c == null) {

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import mowang.Action.ResetRecoveryAction;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Cards.AbstractHealCard;
 import mowang.Helpers.ModHelper;
@@ -27,6 +28,7 @@ public class Devipower extends AbstractHealCard {
                 cardStrings, 0, CardType.SKILL, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.NONE,null);
         setupMagicNumber(2);
         tags.add(Recovery);
+        action = new ResetRecoveryAction(this);
     }
 
     @Override

@@ -51,7 +51,7 @@ public class ModHelper {
         return hasReturn;
     }
 
-    //打印所有手牌
+    // 获取最左自愈牌
     public static AbstractCard GetMostLeftCard() {
         AbstractPlayer p = AbstractDungeon.player;
         if (p == null){
@@ -61,16 +61,22 @@ public class ModHelper {
             if (c.hasTag(Recovery)) {
                 AbstractHealCard ahc = (AbstractHealCard) c;
                 if (ahc.hasRecovery){
-                    logger.info(c.name+"已自愈！！");
+//                    logger.info(c.name+"已自愈！！");
                     continue;
                 }
                 logger.info(c.name);
                 return c;
             }
         }
-
-        logger.info("没有自愈牌，你为什么在获取最左的卡牌？？");
+//        logger.info("没有自愈牌，你为什么在获取最左的卡牌？？");
         return null;
+    }
+    public static Boolean JudgeSelfContained(AbstractHealCard abstractHealCard) {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p == null){
+            return false;
+        }
+        return p.hand.contains(abstractHealCard);
     }
     public static AbstractCard GetMostLeftState() {
         AbstractPlayer p = AbstractDungeon.player;
@@ -78,12 +84,12 @@ public class ModHelper {
             return null;
         }
         for (AbstractCard c : p.hand.group) {
-            if (c.type== AbstractCard.CardType.STATUS) {
-                logger.info(c.name);
+            if (c.type == AbstractCard.CardType.STATUS) {
+//                logger.info(c.name);
                 return c;
             }
         }
-        logger.info("没有状态牌");
+//        logger.info("没有状态牌");
         return null;
     }
 

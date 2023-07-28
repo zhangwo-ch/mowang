@@ -37,6 +37,7 @@ mowang\Action\ExhaustDisCardPileCardAction.class
 mowang\Cards\Attack\InsightStrike.class
 mowang\Cards\Skill\SeeYouOtherside.class
 mowang\Cards\Attack\Deviflame.class
+mowang\Action\SetAHCFlagAction.class
 mowang\Action\AddLanternAction.class
 mowang\Action\ResetRecoveryAction.class
 mowang\Cards\Attack\GatheringChop.class

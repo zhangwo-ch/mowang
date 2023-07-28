@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import mowang.Action.SetAHCFlagAction;
 import mowang.Helpers.ModHelper;
 
 import static basemod.BaseMod.logger;
@@ -17,20 +18,19 @@ import static mowang.Characters.MyCharacter.Enums.*;
 public abstract class AbstractHealCard extends AbstractExampleCard {
 
     public AbstractGameAction action;
-    public Boolean hasRecovery;
+    public Boolean hasRecovery = false;
+    public Boolean RecoveryIng = false;
     public AbstractHealCard(String ID, boolean useTmpArt, CardStrings strings, int COST, CardType TYPE,
                             CardRarity RARITY, CardTarget TARGET,AbstractGameAction action) {
         super(ID, useTmpArt, strings, COST, TYPE,
                 RARITY, TARGET);
         this.action = action;
-        hasRecovery = false;
         tags.add(Recovery);
     }
     public AbstractHealCard(String ID, String s, CardStrings strings, int COST, CardType TYPE,
                             CardRarity RARITY, CardTarget TARGET) {
         super(ID, s, strings, COST, TYPE,
                 RARITY, TARGET);
-        hasRecovery = false;
         tags.add(Recovery);
     }
     // 通常用这个，你AE的最后一个参数加action就可以，简单action可以不用创建action文件夹中，用匿名
@@ -39,7 +39,6 @@ public abstract class AbstractHealCard extends AbstractExampleCard {
         super(ID, s, strings, COST, TYPE,
                 RARITY, TARGET);
         this.action = action;
-        hasRecovery = false;
         tags.add(Recovery);
     }
 
@@ -67,14 +66,15 @@ public abstract class AbstractHealCard extends AbstractExampleCard {
         return this.equals(c);
     }
     public void SelfHealing () {//判断是否可以执行自愈并且执行
-        if (!hasRecovery) {
+        if (!hasRecovery && !RecoveryIng) {
             AbstractCard c = ModHelper.GetMostLeftState();
             if (c != null) {
-                hasRecovery = true;
+                RecoveryIng = true;
                 addToTop(new ExhaustSpecificCardAction(c,
                         AbstractDungeon.player.hand, true));
-                logger.info("自愈成功！！");
                 addToBot(action);//自愈的效果
+                addToBot(new SetAHCFlagAction(this));
+                logger.info("自愈成功！！");
             }
         }
     }

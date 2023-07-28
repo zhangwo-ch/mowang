@@ -23,6 +23,7 @@ public class Lantern extends AbstractExampleCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         gainBlock();
+        drawCards(1);
         if (upgraded){
             this.addToBot(new ScryAction(this.magicNumber));
         }

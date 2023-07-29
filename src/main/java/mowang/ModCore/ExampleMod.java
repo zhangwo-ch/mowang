@@ -16,8 +16,10 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import mowang.Action.KongmingLanternAction;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Characters.MyCharacter;
 import mowang.Helpers.ModHelper;
@@ -140,9 +142,11 @@ public class ExampleMod implements
     public void receiveOnPlayerTurnStart() {
         ModHelper.hasReturn = false;
         ModHelper.ReturnCount = 0;
+        AbstractDungeon.actionManager.addToBottom(new KongmingLanternAction());//添加
     }
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
     }
+
 }

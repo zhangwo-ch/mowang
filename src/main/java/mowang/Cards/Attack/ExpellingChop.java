@@ -23,6 +23,7 @@ public class ExpellingChop extends AbstractExampleCard {
         super(ID, ExpellingChop.class.getSimpleName(),
                 cardStrings, 1, ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         this.setupDamage(8);
+        upgradeMagicNumber(6);
         isMultiDamage = true;
     }
 
@@ -40,6 +41,7 @@ public class ExpellingChop extends AbstractExampleCard {
     @Override
     public void limitedUpgrade() {
         super.limitedUpgrade();
-        this.upgradeDamage(3); // 将该卡牌的伤害提高3点。
+        this.upgradeDamage(3);
+        upgradeMagicNumber(2);
     }
 }

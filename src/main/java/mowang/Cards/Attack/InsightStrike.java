@@ -3,13 +3,17 @@ package mowang.Cards.Attack;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import mowang.Action.EmptyAction;
 import mowang.Action.MarchAction;
 import mowang.Cards.AbstractExampleCard;
+import mowang.Cards.Skill.Lantern;
 import mowang.Helpers.ModHelper;
 
 import static com.megacrit.cardcrawl.cards.AbstractCard.CardType.ATTACK;
@@ -29,8 +33,15 @@ public class InsightStrike extends AbstractExampleCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageToEnemy(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         this.addToBot(new MarchAction(m));
-        ModHelper.CanReturn(6,new ScryAction(magicNumber));
-        ModHelper.CanReturn(12,new DrawCardAction(1));
+//        ModHelper.CanReturn(6,new ScryAction(magicNumber));
+//        ModHelper.CanReturn(12,new DrawCardAction(1));
+
+        if (ModHelper.CanReturn(4, new EmptyAction())){
+            addToBot(new ScryAction(magicNumber));
+        }
+        if (ModHelper.CanReturn(12)){
+            addToBot(new DrawCardAction(1));
+        }
     }
     @Override
     public void limitedUpgrade() {

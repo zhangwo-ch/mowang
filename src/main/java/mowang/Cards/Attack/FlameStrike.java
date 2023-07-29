@@ -3,10 +3,12 @@ package mowang.Cards.Attack;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import mowang.Action.EmptyAction;
 import mowang.Action.ExhaustDisCardPileCardAction;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Cards.Skill.Lantern;
@@ -29,8 +31,11 @@ public class FlameStrike extends AbstractExampleCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageToEnemy(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        ModHelper.CanReturn(7,new ExhaustDisCardPileCardAction(magicNumber));
-        ModHelper.CanReturn(14,new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(), magicNumber, true, true));
+        if (ModHelper.CanReturn(7, new ExhaustDisCardPileCardAction(magicNumber))){
+        }
+        if (ModHelper.CanReturn(14)){
+            addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(), magicNumber, true, true));
+        }
     }
 
     @Override

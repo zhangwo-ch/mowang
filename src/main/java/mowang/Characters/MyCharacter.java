@@ -17,8 +17,10 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import mowang.Cards.Attack.GatheringChop;
 import mowang.Cards.Attack.Strike;
 import mowang.Cards.Skill.Defence;
+import mowang.Cards.Skill.Devisummon;
 import mowang.demo.action;
 import mowang.demo.geishimo;
 import mowang.demo.march;
@@ -83,14 +85,23 @@ public class MyCharacter extends CustomPlayer {
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Strike.ID);
-        retVal.add(Defence.ID);
+        for (int i = 0; i < 4; i++) {
+            retVal.add(Strike.ID);
+        }
+        for (int i = 0; i < 4; i++) {
+            retVal.add(Defence.ID);
+        }
+        retVal.add(GatheringChop.ID);
+        retVal.add(Devisummon.ID);
         return retVal;
     }
 
     // 初始遗物的ID，可以先写个原版遗物凑数
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
+//        for (int i = 0; i < 4; i++) {
+//
+//        }
 //        retVal.add(BaseRelic.ID);
         return retVal;
     }

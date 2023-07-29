@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import mowang.Action.DemonLookAction;
 import mowang.Action.GiveAllEnemyServitorAction;
@@ -40,11 +41,14 @@ public class DemonLookThrough extends AbstractExampleCard {
                 while(var3.hasNext()) {
                     AbstractMonster mo = (AbstractMonster)var3.next();
                     this.addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                    this.addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
                 }
             }
         }
         );
-        ModHelper.CanReturn(23,new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(p,magicNumber)));
+        if (ModHelper.CanReturn(23)){
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(p,magicNumber)));
+        }
     }
     @Override
     public void limitedUpgrade() {

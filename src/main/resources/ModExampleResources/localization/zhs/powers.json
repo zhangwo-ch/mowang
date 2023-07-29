@@ -20,5 +20,19 @@
       "抵扣 #b",
       " 点生命损失。"
     ]
+  },
+  "mowang:StarringChopPower": {
+    "NAME": "“飞星斩的能力”",
+    "DESCRIPTIONS": [
+      "下 #b",
+      " 张牌打出时触发全部回魂的效果。"
+    ]
+  },
+  "mowang:BrokenMemoryPower": {
+    "NAME": "记忆碎片",
+    "DESCRIPTIONS": [
+      "每次弃牌堆的牌减少时获得 #b",
+      " [E] 。(不会触发飞星斩，存在缺陷)"
+    ]
   }
 }

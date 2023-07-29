@@ -1,6 +1,7 @@
 package mowang.Helpers;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -30,10 +31,13 @@ public class ModHelper {
 
     public static Boolean CanReturn(int magicNumber, AbstractGameAction action) {
         AbstractPlayer p = AbstractDungeon.player;
-        if (p.discardPile.group.size() >= magicNumber){
+        if (p.hasPower("StarringChopPower") || p.discardPile.group.size() >=
+                magicNumber){
             hasReturn = true;
             ReturnCount++;
             AbstractDungeon.actionManager.addToBottom(action);
+            AbstractDungeon.actionManager.addToBottom(new
+                    ReducePowerAction(p,p,"StarringChopPower",1));
             return true;
         }
         return false;
@@ -42,7 +46,7 @@ public class ModHelper {
     // 注：此方法只用作是否变色的判断
     public static Boolean CanReturn(int magicNumber) {
         AbstractPlayer p = AbstractDungeon.player;
-        if (p.discardPile.group.size() >= magicNumber){
+        if (p.hasPower("StarringChopPower") || p.discardPile.group.size() >= magicNumber){
             return true;
         }
         return false;

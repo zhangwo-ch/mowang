@@ -74,11 +74,12 @@
   },
   "mowang:EternalConnection": {
     "NAME": "亘古之绊",
-    "DESCRIPTION": "预见 !M! 。回魂8：获得等同于已损失生命值的格挡。回魂12：给予所有敌人 !M! 使魔。"
+    "DESCRIPTION": "预见 !M! 。回魂8：每预见一张状态就获得1 使魔。回魂12：给予所有敌人 !M! 使魔。",
+    "UPGRADE_DESCRIPTION": "预见 !M! 。回魂8：每预见一张状态就获得2 使魔。回魂12：给予所有敌人 !M! 使魔。"
   },
   "mowang:DemonLookThrough": {
     "NAME": "洞见的恶魔",
-    "DESCRIPTION": "如果目标意图是攻击，召回使魔，否则使魔进军。回魂13：给予 !M! 层 虚弱 。回魂23：获得 !M! 点 力量 。"
+    "DESCRIPTION": "如果目标意图是攻击，召回使魔，否则使魔进军。回魂13：给予 !M! 层 虚弱 与 易伤。回魂23：获得 !M! 点 力量 。"
   },
   "mowang:SeeYouOtherside": {
     "NAME": "思念的彼方",
@@ -86,7 +87,7 @@
   },
   "mowang:WraithStar": {
     "NAME": "恶灵星体",
-    "DESCRIPTION": "获得 !B! 格挡。回魂8：将弃牌堆1张牌置入手牌。回魂24：这张牌本回合内耗能为0。"
+    "DESCRIPTION": "获得 !B! 格挡。 mowang:回魂 8：将弃牌堆1张牌置入手牌。 mowang:回魂 24：选择的那张牌，本回合内耗能为0。"
   },
   "mowang:WraithLantern": {
     "NAME": "恶灵灯火",
@@ -120,6 +121,111 @@
   "mowang:AbsorbingChop": {
     "NAME": "噬魂斩",
     "DESCRIPTION": "造成 !D! 伤害。回魂19：如果造成未被格挡的伤害，获得 !M! 使魔。"
+  },
+  "mowang:RedAndSilver": {
+    "NAME": "一同走过的灯海",
+    "DESCRIPTION": "造成 !D! 伤害。 mowang:回魂 4：弃牌堆中加入 !M! 张明灯。 mowang:回魂 18：手牌中加入一张明灯。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 伤害。 mowang:回魂 4：弃牌堆中加入 !M! 张明灯。 mowang:回魂 18：手牌中加入一张明灯+。"
+  },
+  "mowang:RainFall": {
+    "NAME": "雨落千秋",
+    "DESCRIPTION": "造成 !D! 伤害。交换抽牌堆与弃牌堆。"
+  },
+  "mowang:DividingChop": {
+    "NAME": "离魂斩",
+    "DESCRIPTION": "造成 !D! 伤害。 mowang:回魂 21：获得 !M! 力量，目标失去 !M! 力量。"
+  },
+  "mowang:ComprehensiveStrike": {
+    "NAME": "无死角打击",
+    "DESCRIPTION": "造成 !D! 伤害。使魔进军并给予 !M! 使魔。 mowang:回魂 8：使魔行动一次。"
+  },
+  "mowang:BloodyChops": {
+    "NAME": "血溅连斩",
+    "DESCRIPTION": "失去3生命。造成 !D! 伤害 !M! 次。 mowang:自愈 ：本次战斗内本卡伤害+3"
+  },
+  "mowang:Doragon": {
+    "NAME": "龙突",
+    "DESCRIPTION": "造成 !D! 伤害，失去1力量。 mowang:自愈 ：获得 !M! 力量。"
+  },
+  "mowang:YuureiChop": {
+    "NAME": "鬼斩",
+    "DESCRIPTION": "造成 !D! 伤害，失去1敏捷。 mowang:自愈 ：获得 !M! 敏捷。"
+  },
+  "mowang:StarringChop": {
+    "NAME": "飞星斩",
+    "DESCRIPTION": "造成 !D! 伤害，从弃牌堆抽 !M! 张牌并洗入等量 灼伤 。 mowang:自愈 ：本回合内下 !M! 张牌打出时触发所有回魂效果。"
+  },
+  "mowang:EarthCollapse": {
+    "NAME": "大地崩坏",
+    "DESCRIPTION": "对所有敌人造成 !D! 伤害。 mowang:回魂 11：所有敌人本回合内失去 !M! 力量。"
+  },
+  "mowang:FlamingChop": {
+    "NAME": "炎明斩",
+    "DESCRIPTION": "造成 !D! 伤害2次，弃牌堆每有一张灼伤就预见1。 mowang:自愈 ：在弃牌堆中加入 !M! 张明灯。"
+  },
+  "mowang:DemonUnderSun": {
+    "NAME": "日耀的恶魔",
+    "DESCRIPTION": "造成 !D! 伤害，将3张 灼伤 洗入弃牌堆。 mowang:回魂 13：攻击两次。 mowang:回魂 23：攻击三次。"
+  },
+  "mowang:WraithStrike": {
+    "NAME": "恶灵打击",
+    "DESCRIPTION": "随机造成 !D! 伤害3次。 mowang:自愈 ：给予所有敌人 !M! 使魔并召回。 mowang:回魂 22：本卡伤害增加你持有的使魔数。"
+  },
+  "mowang:ThirstyStrike": {
+    "NAME": "渴血打击",
+    "DESCRIPTION": "造成 !D! 伤害，恢复 !M! 生命。本回合内每触发一次回魂，本卡耗能-1"
+  },
+  "mowang:PolarDay": {
+    "NAME": "极光极昼",
+    "DESCRIPTION": "造成 !D! 伤害3次，将2张灼伤洗入弃牌堆。被预见丢弃时对随机敌人打出。"
+  },
+  "mowang:PolarNight": {
+    "NAME": "极影极夜",
+    "DESCRIPTION": "造成 !D! 伤害3次。如果处在弃牌堆，每次弃牌堆数量减少时对随机敌人打出。"
+  },
+  "mowang:Komorebi": {
+    "NAME": "叶隐落阳",
+    "DESCRIPTION": "造成 !D! 伤害，获得 !M! 力量。当 mowang:自愈 触发时，从弃牌堆回到手牌。"
+  },
+  "mowang:KongmingLantern": {
+    "NAME": "天灯",
+    "DESCRIPTION": "不能被打出。 NL 这张卡被消耗时获得 [E] 并将 !M! 张明灯洗入弃牌堆。 NL 回合开始时若这张卡在消耗堆，获得 [E] 并将一张 明灯 洗入弃牌堆。",
+    "UPGRADE_DESCRIPTION": "不能被打出。 NL 这张卡被消耗时获得 [E] [E] 并将 !M! 张明灯洗入弃牌堆。 NL 回合开始时若这张卡在消耗堆，获得 [E] 并将一张 明灯+ 洗入弃牌堆。"
+  },
+  "mowang:Devibarrier": {
+    "NAME": "恶魔壁垒",
+    "DESCRIPTION": "获得等于场上使魔总数的 格挡 。",
+    "UPGRADE_DESCRIPTION": "对所有敌人给予6使魔。获得等于场上使魔总数的 格挡 。"
+  },
+  "mowang:Intuition": {
+    "NAME": "直觉",
+    "DESCRIPTION": "获得 !B! 格挡，下一张攻击牌免费打出。回魂20：并且打出两次。"
+  },
+  "mowang:HealCardCheck": {
+    "NAME": " mowang:自愈 杯面",
+    "DESCRIPTION": "获得 !B! 点格挡。  mowang:自愈 ：获得 [E] 。"
+  },
+  "mowang:DemonUnderLunar": {
+    "NAME": "望月的恶魔",
+    "DESCRIPTION": "将 !M! 张 明灯 洗入弃牌堆。 mowang:回魂 13：弃牌堆选择一张牌置入手牌。 mowang:回魂 23：清除自身所有负面状态。"
+  },
+  "mowang:DemonWithSigning": {
+    "NAME": "叹咏的恶魔",
+    "DESCRIPTION": "场上所有单位获得 !M! 使魔，将1张 晕眩 洗入弃牌堆。 mowang:回魂 13：使魔行动一次。 mowang:回魂 23：再行动一次。"
+  },
+  "mowang:DemonInMist": {
+    "NAME": "雾隐的恶魔",
+    "DESCRIPTION": "场上每有一个单位具有使魔就获得1能量。回魂13：获得 !M! 层残影。回魂23：获得 !M! 力量。"
+  },
+  "mowang:MissedHeaven": {
+    "NAME": "被错过的天堂",
+    "DESCRIPTION": "失去X生命，获得X力量。将X张灼伤与明灯洗入弃牌堆。",
+    "UPGRADE_DESCRIPTION": "失去X生命，获得X力量。将X张灼伤与明灯+洗入弃牌堆。"
+  },
+  "mowang:Hikari": {
+    "NAME": "光",
+    "DESCRIPTION": " 保留 。丢弃抽牌堆中所有明灯，每张获得4格挡。受敏捷加成。 消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。丢弃抽牌堆中所有明灯，每张获得4格挡。受敏捷加成。"
   },
   "mowang:": {
     "NAME": "",

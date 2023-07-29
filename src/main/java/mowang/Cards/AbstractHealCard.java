@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import mowang.Action.KomorebiAction;
 import mowang.Action.SetAHCFlagAction;
 import mowang.Helpers.ModHelper;
 
@@ -73,6 +74,7 @@ public abstract class AbstractHealCard extends AbstractExampleCard {
                 addToTop(new ExhaustSpecificCardAction(c,
                         AbstractDungeon.player.hand, true));
                 addToBot(action);//自愈的效果
+                addToBot(new KomorebiAction());//在这个加个aciotn
                 addToBot(new SetAHCFlagAction(this));
                 logger.info("自愈成功！！");
             }

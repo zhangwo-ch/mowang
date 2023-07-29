@@ -15,16 +15,25 @@ import java.util.Iterator;
 public class AddLanternAction extends AbstractGameAction {
 
     AbstractCard baseCard;
+    private Boolean useMagic;
     public AddLanternAction(AbstractCard baseCard) {
         this.baseCard = baseCard;
+        useMagic = false;
     }
-
+    public AddLanternAction(AbstractCard baseCard,Boolean useMagic) {
+        this.baseCard = baseCard;
+        this.useMagic = useMagic;
+    }
     public void update() {
         AbstractCard c = new Lantern();
         if (baseCard.upgraded){
             c.upgrade();
         }
-        addToBot(new MakeTempCardInHandAction(c,1));
+        if (useMagic){
+            addToBot(new MakeTempCardInHandAction(c,c.magicNumber));
+        }else {
+            addToBot(new MakeTempCardInHandAction(c,1));
+        }
         this.isDone = true;
     }
 }

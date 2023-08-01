@@ -25,9 +25,9 @@ public class DemonLookAction extends AbstractGameAction {
 
     public void update() {
         if (this.targetMonster != null && this.targetMonster.getIntentBaseDmg() >= 0) {
-            this.addToBot(new MarchAction(targetMonster));
-        }else {
             this.addToBot(new CallBackAction());
+        }else {
+            this.addToBot(new MarchAction(targetMonster));
         }
 
         this.isDone = true;

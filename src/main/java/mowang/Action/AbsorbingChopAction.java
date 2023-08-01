@@ -23,7 +23,12 @@ public class AbsorbingChopAction extends AbstractGameAction {
 		this.actionType = ActionType.DAMAGE;
 		this.duration = 0.1F;
 	}
-
+	public AbsorbingChopAction(AbstractCreature target, DamageInfo info) {
+		this.info = info;
+		setValues(target, info);
+		this.actionType = ActionType.DAMAGE;
+		this.duration = 0.1F;
+	}
 	public void update() {
 		if (this.duration == 0.1F && this.target != null) {
 			int res;
@@ -37,7 +42,7 @@ public class AbsorbingChopAction extends AbstractGameAction {
 				res = tmp - mon.currentHealth;
 			} 
 			if (res > 0)
-				this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ServitorPower(AbstractDungeon.player,magic)));
+				this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ServitorPower(AbstractDungeon.player,res)));
 			if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
 				AbstractDungeon.actionManager.clearPostCombatActions(); 
 		} 

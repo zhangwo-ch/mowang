@@ -9,19 +9,19 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import static mowang.Characters.MyCharacter.Enums.EXAMPLE_CARD;
+import static mowang.Characters.MyCharacter.Enums.MoWangCardColor;
 
 public abstract class AbstractExampleCard extends CustomCard {
     // useTmpArt表示是否使用测试卡图，当你卡图不够用时可以使用
     public AbstractExampleCard(String ID, boolean useTmpArt, CardStrings strings, int COST, CardType TYPE,
                                CardRarity RARITY, CardTarget TARGET) {
         super(ID, strings.NAME, useTmpArt ? GetTmpImgPath() : GetImgPath(TYPE, ID), COST, strings.DESCRIPTION, TYPE,
-                EXAMPLE_CARD, RARITY, TARGET);
+                MoWangCardColor, RARITY, TARGET);
     }
     public AbstractExampleCard(String ID, String s, CardStrings strings, int COST, CardType TYPE,
                                CardRarity RARITY, CardTarget TARGET) {
         super(ID, strings.NAME, GetImgPath(TYPE, s), COST, strings.DESCRIPTION, TYPE,
-                EXAMPLE_CARD, RARITY, TARGET);
+                MoWangCardColor, RARITY, TARGET);
     }
     public AbstractExampleCard(String ID, String s, CardStrings strings, int COST, CardType TYPE, CardColor color,
                                CardRarity RARITY, CardTarget TARGET) {

@@ -10,8 +10,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import mowang.Cards.AbstractHealCard;
 import mowang.Helpers.ModHelper;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -27,6 +29,8 @@ public class Doragon extends AbstractHealCard {
 				cardStrings, 2, ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY, null);
 		this.damage = this.baseDamage = 23;
 		this.magicNumber = this.baseMagicNumber = 3;
+		if(AbstractDungeon.player != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
+			this.action = new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.magicNumber), this.magicNumber);
 	}
 
 	@Override
@@ -38,8 +42,9 @@ public class Doragon extends AbstractHealCard {
     @Override
 	public void update() {
     	super.update();
-    	if(AbstractDungeon.player != null)
-    		this.action = new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.magicNumber), this.magicNumber);
+		if(this.action != null && AbstractDungeon.player != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
+			this.action = new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.magicNumber), this.magicNumber);
+
 	}
 	
 	@Override

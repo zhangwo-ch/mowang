@@ -33,7 +33,7 @@ public class ExpellingChop extends AbstractExampleCard {
         ModHelper.CanReturn(8, new AbstractGameAction() {
             @Override
             public void update() {
-                applyToPlayer(new ServitorPower(p,magicNumber));
+                addToBot(new ActionAction());
                 isDone = true;
             }
         });

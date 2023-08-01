@@ -25,7 +25,7 @@ public class Devibarrier extends AbstractExampleCard {
 
     public Devibarrier() {
         super(ID, Devibarrier.class.getSimpleName(),
-                cardStrings, 2, CardType.SKILL, CardRarity.COMMON, CardTarget.ALL_ENEMY);
+                cardStrings, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
     }
 
     @Override

@@ -27,7 +27,7 @@ public class WraithStar extends AbstractExampleCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	addToBot(new GiveAllEnemyServitorAction(this.magicNumber));
+		gainBlock();
     	int count=0;
     	if(ModHelper.CanReturn(24)) count +=1;
     	if(ModHelper.CanReturn(8)) count +=1;

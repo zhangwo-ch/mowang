@@ -38,7 +38,7 @@ public class ReplaceBurnAction extends AbstractGameAction {
                 return;
             }
             numExhausted = this.amount;
-            AbstractDungeon.handCardSelectScreen.open("替换", this.amount, this.anyNumber, this.canPickZero);
+            AbstractDungeon.handCardSelectScreen.open("替换", this.amount, this.anyNumber, false);
             this.tickDuration();
             return;
         }

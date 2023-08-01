@@ -21,10 +21,8 @@ import mowang.Cards.Attack.GatheringChop;
 import mowang.Cards.Attack.Strike;
 import mowang.Cards.Skill.Defence;
 import mowang.Cards.Skill.Devisummon;
-import mowang.demo.action;
-import mowang.demo.geishimo;
-import mowang.demo.march;
 import mowang.ModCore.ExampleMod;
+import mowang.Relics.SoulEater;
 
 import java.util.ArrayList;
 
@@ -54,7 +52,7 @@ public class MyCharacter extends CustomPlayer {
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("mowang:MyCharacter");
 
     public MyCharacter(String name) {
-        super(name, Enums.MY_CHARACTER,ORB_TEXTURES,"ModExampleResources/img/UI/orb/vfx.png", LAYER_SPEED, null, null);
+        super(name, Enums.MoWang,ORB_TEXTURES,"ModExampleResources/img/UI/orb/vfx.png", LAYER_SPEED, null, null);
 
 
         // 人物对话气泡的大小，如果游戏中尺寸不对在这里修改（libgdx的坐标轴左下为原点）
@@ -99,10 +97,7 @@ public class MyCharacter extends CustomPlayer {
     // 初始遗物的ID，可以先写个原版遗物凑数
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-//        for (int i = 0; i < 4; i++) {
-//
-//        }
-//        retVal.add(BaseRelic.ID);
+        retVal.add(SoulEater.ID);
         return retVal;
     }
 
@@ -131,7 +126,7 @@ public class MyCharacter extends CustomPlayer {
     // 你的卡牌颜色（这个枚举在最下方创建）
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return Enums.EXAMPLE_CARD;
+        return Enums.MoWangCardColor;
     }
 
     // 翻牌事件出现的你的职业牌（一般设为打击）
@@ -227,13 +222,13 @@ public class MyCharacter extends CustomPlayer {
     // ***填在SpireEnum中的name需要一致***
     public static class Enums {
         @SpireEnum
-        public static PlayerClass MY_CHARACTER;
+        public static PlayerClass MoWang;
 
-        @SpireEnum(name = "EXAMPLE_GREEN")
-        public static AbstractCard.CardColor EXAMPLE_CARD;
+        @SpireEnum(name = "MoWang_GREEN")
+        public static AbstractCard.CardColor MoWangCardColor;
 
-        @SpireEnum(name = "EXAMPLE_GREEN")
-        public static CardLibrary.LibraryType EXAMPLE_LIBRARY;
+        @SpireEnum(name = "MoWang_GREEN")
+        public static CardLibrary.LibraryType MoWang_LIBRARY;
         @SpireEnum
         public static  AbstractCard.CardTags Recovery;
         @SpireEnum

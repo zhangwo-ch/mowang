@@ -57,8 +57,9 @@ public class HeavenAction extends AbstractGameAction {
 			for(int i=0;i<effect;i++) {
 	    		addToBot((AbstractGameAction)new MakeTempCardInDiscardAction(new Burn(), true));
 	    		Lantern c = new Lantern();
-	    		if(this.upgrade) c.upgrade();
-	    		addToBot((AbstractGameAction)new MakeTempCardInDiscardAction(new Lantern(), true));
+	    		if(this.upgrade)
+					c.upgrade();
+	    		addToBot((AbstractGameAction)new MakeTempCardInDiscardAction(c, true));
 			}
 			
 			if (!this.freeToPlayOnce)

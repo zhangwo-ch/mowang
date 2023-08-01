@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mowang" />
+        <module name="ZekkenNoMaou" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ExampleMod" target="1.8" />
+      <module name="mowang" target="1.8" />
       <module name="test" target="18" />
     </bytecodeTargetLevel>
   </component>

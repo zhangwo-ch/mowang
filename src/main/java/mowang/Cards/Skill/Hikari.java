@@ -23,17 +23,17 @@ public class Hikari extends AbstractExampleCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	if(p.hasPower("Dexterity"))
-    		addToBot(new HikariAction(Lantern.ID, p.getPower("Dexterity").amount));
-    	else
-    		addToBot(new HikariAction(Lantern.ID, 0));
+        if(p.hasPower("Dexterity"))
+            addToBot(new HikariAction(Lantern.ID, p.getPower("Dexterity").amount));
+        else
+            addToBot(new HikariAction(Lantern.ID, 0));
     }
-    
+
     @Override
     public void limitedUpgrade() {
         super.limitedUpgrade();
-		this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-		initializeDescription();
-		this.exhaust = false;
+        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        initializeDescription();
+        this.exhaust = false;
     }
 }

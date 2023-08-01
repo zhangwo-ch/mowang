@@ -38,10 +38,10 @@ public class StarringChop extends AbstractHealCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     	addToBot((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-    	addToBot(new DrawFromDiscard(this.magicNumber));
+//    	addToBot(new DrawFromDiscard(this.magicNumber));
     	
-    	for(int i=0;i<this.magicNumber;i++)
-    		addToBot((AbstractGameAction)new MakeTempCardInDiscardAction(new Burn(), true));
+//    	for(int i=0;i<this.magicNumber;i++)
+//    		addToBot((AbstractGameAction)new MakeTempCardInDiscardAction(new Burn(), true));
     }
     
     @Override

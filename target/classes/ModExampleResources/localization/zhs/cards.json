@@ -104,7 +104,7 @@
   },
   "mowang:HellPact": {
     "NAME": "地狱契约",
-    "DESCRIPTION": "获得 !M! 点 能量。将至多 1 张手牌替换为 灼伤 。"
+    "DESCRIPTION": "获得 !M! 点 能量。将 1 张手牌替换为 灼伤 。"
   },
   "mowang:BloodyPact": {
     "NAME": "鲜血契约",
@@ -120,7 +120,7 @@
   },
   "mowang:AbsorbingChop": {
     "NAME": "噬魂斩",
-    "DESCRIPTION": "造成 !D! 伤害。回魂19：如果造成未被格挡的伤害，获得 !M! 使魔。"
+    "DESCRIPTION": "造成 !D! 伤害。回魂19：获得等同于未被格挡伤害的使魔。"
   },
   "mowang:RedAndSilver": {
     "NAME": "一同走过的灯海",
@@ -153,7 +153,7 @@
   },
   "mowang:StarringChop": {
     "NAME": "飞星斩",
-    "DESCRIPTION": "造成 !D! 伤害，从弃牌堆抽 !M! 张牌并洗入等量 灼伤 。 mowang:自愈 ：本回合内下 !M! 张牌打出时触发所有回魂效果。"
+    "DESCRIPTION": "造成 !D! 伤害 。 mowang:自愈 ：本回合内下 !M! 张牌打出时触发所有回魂效果。"
   },
   "mowang:EarthCollapse": {
     "NAME": "大地崩坏",
@@ -169,7 +169,7 @@
   },
   "mowang:WraithStrike": {
     "NAME": "恶灵打击",
-    "DESCRIPTION": "随机造成 !D! 伤害3次。 mowang:自愈 ：给予所有敌人 !M! 使魔并召回。 mowang:回魂 22：本卡伤害增加你持有的使魔数。"
+    "DESCRIPTION": "随机造成 !D! 伤害3次。 mowang:回魂 22：本卡伤害增加你持有的使魔数。"
   },
   "mowang:ThirstyStrike": {
     "NAME": "渴血打击",
@@ -230,5 +230,9 @@
   "mowang:": {
     "NAME": "",
     "DESCRIPTION": ""
+  },
+  "mowang:WraithConnection": {
+    "NAME": "恶灵之绊",
+    "DESCRIPTION": " 预见 !M! 。 mowang:回魂 8：给予所有敵人 !M! 使魔。 mowang:回魂 12：再给予一次。"
   }
 }

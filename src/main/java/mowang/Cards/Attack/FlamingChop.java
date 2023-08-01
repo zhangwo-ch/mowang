@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import mowang.Action.AddLanternAction;
+import mowang.Action.AddLanternToDisCardAction;
 import mowang.Action.EmptyAction;
 import mowang.Cards.AbstractHealCard;
 import mowang.Cards.Skill.Lantern;
@@ -37,7 +38,7 @@ public class FlamingChop extends AbstractHealCard {
                 cardStrings, 1, ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY, null);
         this.damage = this.baseDamage = 4;
         this.magicNumber = this.baseMagicNumber = 2;
-        action = new AddLanternAction(this,true);
+        action = new AddLanternToDisCardAction(this,magicNumber);
     }
 
     @Override

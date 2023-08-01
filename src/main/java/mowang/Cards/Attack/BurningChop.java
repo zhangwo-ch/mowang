@@ -1,6 +1,8 @@
 package mowang.Cards.Attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -25,6 +27,8 @@ public class BurningChop extends AbstractExampleCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageToEnemy(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        damageToEnemy(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        addToBot(new MakeTempCardInDiscardAction(new Burn(),2));
         ModHelper.CanReturn(10,new FetchAllBurnFromDisCardPileAction());
     }
     @Override

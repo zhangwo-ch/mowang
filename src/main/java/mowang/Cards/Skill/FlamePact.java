@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mowang.Action.GiveAllEnemyServitorAction;
 import mowang.Cards.AbstractHealCard;
 import mowang.Helpers.ModHelper;
+import mowang.powers.ServitorPower;
 
 import java.util.Iterator;
 
@@ -44,7 +45,8 @@ public class FlamePact extends AbstractHealCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GiveAllEnemyServitorAction(3));
+        applyToPlayer(new ServitorPower(p,magicNumber));
+        addToBot(new GiveAllEnemyServitorAction(magicNumber));
         int count = 0;
         Iterator var4 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
 

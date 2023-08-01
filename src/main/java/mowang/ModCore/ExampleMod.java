@@ -23,11 +23,12 @@ import mowang.Action.KongmingLanternAction;
 import mowang.Cards.AbstractExampleCard;
 import mowang.Characters.MyCharacter;
 import mowang.Helpers.ModHelper;
+import mowang.Relics.SoulEater;
 
 import java.nio.charset.StandardCharsets;
 
-import static mowang.Characters.MyCharacter.Enums.EXAMPLE_CARD;
-import static mowang.Characters.MyCharacter.Enums.MY_CHARACTER;
+import static mowang.Characters.MyCharacter.Enums.MoWangCardColor;
+import static mowang.Characters.MyCharacter.Enums.MoWang;
 
 @SpireInitializer // 加载mod的注解
 public class ExampleMod implements
@@ -74,7 +75,7 @@ public class ExampleMod implements
 // Color glowColor
     public ExampleMod() {
         BaseMod.subscribe(this); // 告诉basemod你要订阅事件
-        BaseMod.addColor(EXAMPLE_CARD, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR,BG_ATTACK_512,BG_SKILL_512,BG_POWER_512,ENEYGY_ORB,BG_ATTACK_1024,BG_SKILL_1024,BG_POWER_1024,BIG_ORB,SMALL_ORB);
+        BaseMod.addColor(MoWangCardColor, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR,BG_ATTACK_512,BG_SKILL_512,BG_POWER_512,ENEYGY_ORB,BG_ATTACK_1024,BG_SKILL_1024,BG_POWER_1024,BIG_ORB,SMALL_ORB);
     }
 
     public static void initialize() {
@@ -84,14 +85,14 @@ public class ExampleMod implements
     @Override
     public void receiveEditCharacters() {
         // 向basemod注册人物
-        BaseMod.addCharacter(new MyCharacter(CardCrawlGame.playerName), MY_CHARACTER_BUTTON, MY_CHARACTER_PORTRAIT, MY_CHARACTER);
+        BaseMod.addCharacter(new MyCharacter(CardCrawlGame.playerName), MY_CHARACTER_BUTTON, MY_CHARACTER_PORTRAIT, MoWang);
     }
     // 当basemod开始注册mod卡牌时，便会调用这个函数
     @Override
     public void receiveEditCards() {
         // 向basemod注册卡牌
 
-        new AutoAdd("mowang") // ${project.artifactId}
+        new AutoAdd("ZekkenNoMaou") // ${project.artifactId}
                 .packageFilter(AbstractExampleCard.class) // filters to any class in the same package as AbstractDefaultCard, nested packages included
                 .setDefaultSeen(true)
                 .cards();
@@ -100,7 +101,7 @@ public class ExampleMod implements
     @Override
     public void receiveEditRelics() {
 //        BaseMod.addRelicToCustomPool(new MyRelic(), EXAMPLE_CARD);
-//        BaseMod.addRelic(new MyRelic(), RelicType.SHARED); // RelicType表示是所有角色都能拿到的遗物，还是一个角色的独有遗物
+        BaseMod.addRelic(new SoulEater(), RelicType.SHARED); // RelicType表示是所有角色都能拿到的遗物，还是一个角色的独有遗物
 //        BaseMod.addRelic(new BaseRelic(), RelicType.SHARED); // RelicType表示是所有角色都能拿到的遗物，还是一个角色的独有遗物
 //        UnlockTracker.markRelicAsSeen(MyRelic.ID);
     }

@@ -36,8 +36,10 @@ public class ModHelper {
             hasReturn = true;
             ReturnCount++;
             AbstractDungeon.actionManager.addToBottom(action);
-            AbstractDungeon.actionManager.addToBottom(new
-                    ReducePowerAction(p,p,"StarringChopPower",1));
+            if (p.hasPower("StarringChopPower")){
+                AbstractDungeon.actionManager.addToBottom(new
+                        ReducePowerAction(p,p,"StarringChopPower",1));
+            }
             return true;
         }
         return false;

@@ -56,8 +56,6 @@ public class PolarNight extends AbstractExampleCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		for(int i=0;i<3;i++)
 			addToBot((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-		for(int i=0;i<2;i++)
-			addToBot((AbstractGameAction)new MakeTempCardInDiscardAction(new Burn(), true));
 	}
 	
 

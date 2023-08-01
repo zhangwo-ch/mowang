@@ -1,6 +1,7 @@
 package mowang.Cards.Skill;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -30,7 +31,7 @@ public class DemonWithSigning extends AbstractExampleCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
     	addToBot(new GiveAllEnemyServitorAction(this.magicNumber));
     	addToBot(new ApplyPowerAction(p,p,new ServitorPower(p,this.magicNumber)));
-    	addToBot(new MakeTempCardInDrawPileAction(new Wound(), 1, true, true));
+    	addToBot(new MakeTempCardInDrawPileAction(new Dazed(), 1, true, true));
     	
     	ModHelper.CanReturn(13, new ActionAction());
     	

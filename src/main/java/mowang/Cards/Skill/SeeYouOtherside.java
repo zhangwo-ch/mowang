@@ -17,10 +17,7 @@ public class SeeYouOtherside extends AbstractExampleCard {
         setupBlock(4);
         setupMagicNumber(4);
     }
-
-    @Override
-    public void onMoveToDiscard() {
-        super.onMoveToDiscard();
+    public void gainMoreBlock(){
         upgradeBlock(magicNumber);
     }
 

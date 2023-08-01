@@ -25,6 +25,7 @@ public class BloodyChops extends AbstractHealCard {
                 CardRarity.UNCOMMON, CardTarget.ENEMY, null);
         this.damage = this.baseDamage = 3;
         this.magicNumber = this.baseMagicNumber = 5;
+        this.action = new ModifyDamageAction(this.uuid, 3);
     }
 
     @Override
@@ -34,14 +35,7 @@ public class BloodyChops extends AbstractHealCard {
     		addToBot((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     	}
     }
-    
-    @Override
-	public void update() {
-    	super.update();
-    	this.action = new ModifyDamageAction(this.uuid, this.magicNumber);
-    }
-    	
-    
+
     @Override
     public void limitedUpgrade() {
         super.limitedUpgrade();

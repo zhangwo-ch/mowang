@@ -26,7 +26,7 @@ public class DemonLookThrough extends AbstractExampleCard {
 
     public DemonLookThrough() {
         super(ID, DemonLookThrough.class.getSimpleName(),
-                cardStrings, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+                cardStrings, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
         setupMagicNumber(2);
     }
 
@@ -36,13 +36,9 @@ public class DemonLookThrough extends AbstractExampleCard {
         ModHelper.CanReturn(13,new AbstractGameAction() {
             @Override
             public void update() {
-                Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-
-                while(var3.hasNext()) {
-                    AbstractMonster mo = (AbstractMonster)var3.next();
-                    this.addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-                    this.addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-                }
+                this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                isDone = true;
             }
         }
         );

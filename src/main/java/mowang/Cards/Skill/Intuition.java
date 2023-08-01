@@ -19,12 +19,12 @@ public class Intuition extends AbstractExampleCard {
     public Intuition() {
         super(ID, Intuition.class.getSimpleName(),
                 cardStrings, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        this.block = this.baseBlock = 8;
+        setupBlock(8);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	addToBot(new GainBlockAction(p, p, this.block));
+        gainBlock();
     	addToBot(new ApplyPowerAction(p, p, new FreeAttackPower(p, 1), 1));
     	ModHelper.CanReturn(20,new ApplyPowerAction(p,p,new DoubleTapPower(p,1), 1));
     }

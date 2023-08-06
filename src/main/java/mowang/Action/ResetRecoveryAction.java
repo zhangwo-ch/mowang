@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import mowang.Cards.AbstractHealCard;
+import mowang.Cards.Skill.Devipower;
 import mowang.Cards.Skill.Lantern;
 
 import java.util.Iterator;
@@ -24,7 +25,7 @@ public class ResetRecoveryAction extends AbstractGameAction {
             AbstractCard ac = var.next();
             if (ac.hasTag(Recovery)){
                 AbstractHealCard ahc = (AbstractHealCard) ac;
-                if (ahc.equals(baseCard)){
+                if (ahc instanceof Devipower){
                     continue;
                 }
                 if (ahc.hasRecovery){

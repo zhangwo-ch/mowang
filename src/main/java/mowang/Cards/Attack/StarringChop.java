@@ -1,8 +1,7 @@
 package mowang.Cards.Attack;
 
-import basemod.devcommands.fight.Fight;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import mowang.Action.DrawFromDiscard;
+import mowang.Action.WraithStrikeHealAction;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -33,24 +32,24 @@ public class StarringChop extends AbstractHealCard {
                 cardStrings, 1, ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY, null);
         this.damage = this.baseDamage = 4;
         this.magicNumber = this.baseMagicNumber = 2;
+        this.action = new AbstractGameAction() {
+        	@Override
+        	public void update() {
+        		addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StarringChopPower(AbstractDungeon.player, magicNumber), magicNumber));
+        		this.isDone = true;
+        	}
+        };
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     	addToBot((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-//    	addToBot(new DrawFromDiscard(this.magicNumber));
+    	addToBot(new DrawFromDiscard(this.magicNumber));
     	
-//    	for(int i=0;i<this.magicNumber;i++)
-//    		addToBot((AbstractGameAction)new MakeTempCardInDiscardAction(new Burn(), true));
+    	for(int i=0;i<this.magicNumber;i++)
+    		addToBot((AbstractGameAction)new MakeTempCardInDiscardAction(new Burn(), true));
     }
     
-    @Override
-	public void update() {
-    	super.update();
-    	if(AbstractDungeon.player != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
-    		this.action = new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                    new StarringChopPower(AbstractDungeon.player, this.magicNumber), this.magicNumber);
-	}
     
     @Override
     public void limitedUpgrade() {

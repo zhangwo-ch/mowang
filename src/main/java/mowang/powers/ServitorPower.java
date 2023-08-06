@@ -1,9 +1,10 @@
 package mowang.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -63,6 +64,15 @@ public class ServitorPower extends AbstractPower {
         }
         return damageAmount;
     }
+
+    public void onDeath() {
+        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead() && this.owner.currentHealth <= 0) {
+            if (owner!=AbstractDungeon.player){
+                AbstractPlayer p = AbstractDungeon.player;
+                addToBot(new ApplyPowerAction(p,p,new ServitorPower(p,amount)));
+            }
+        }
+    }
     public void reducePower(int reduceAmount) {
         this.fontScale = 8.0F;
         this.amount -= reduceAmount;
@@ -77,7 +87,6 @@ public class ServitorPower extends AbstractPower {
         if (this.amount <= -999) {
             this.amount = -999;
         }
-
     }
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];

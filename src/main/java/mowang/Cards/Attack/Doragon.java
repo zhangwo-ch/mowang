@@ -3,6 +3,7 @@ package mowang.Cards.Attack;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,11 +11,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import mowang.Cards.AbstractHealCard;
+import mowang.Cards.Skill.Lantern;
 import mowang.Helpers.ModHelper;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 
@@ -29,8 +29,13 @@ public class Doragon extends AbstractHealCard {
 				cardStrings, 2, ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY, null);
 		this.damage = this.baseDamage = 23;
 		this.magicNumber = this.baseMagicNumber = 3;
-		if(AbstractDungeon.player != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
-			this.action = new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.magicNumber), this.magicNumber);
+        this.action = new AbstractGameAction() {
+        	@Override
+        	public void update() {
+        		addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, magicNumber), magicNumber));
+        		this.isDone = true;
+        	}
+        };
 	}
 
 	@Override
@@ -39,13 +44,6 @@ public class Doragon extends AbstractHealCard {
 		addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)p, (AbstractCreature)p, (AbstractPower)new StrengthPower((AbstractCreature)p, -1), -1));
 	}
 	
-    @Override
-	public void update() {
-    	super.update();
-		if(this.action != null && AbstractDungeon.player != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
-			this.action = new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.magicNumber), this.magicNumber);
-
-	}
 	
 	@Override
 	public void limitedUpgrade() {

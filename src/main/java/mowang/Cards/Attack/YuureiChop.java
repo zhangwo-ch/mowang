@@ -12,11 +12,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import mowang.Cards.AbstractHealCard;
 import mowang.Helpers.ModHelper;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import mowang.powers.StarringChopPower;
 
 import static com.megacrit.cardcrawl.cards.AbstractCard.CardType.ATTACK;
 
@@ -29,8 +27,13 @@ public class YuureiChop extends AbstractHealCard {
                 cardStrings, 2, ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY, null);
         this.damage = this.baseDamage = 23;
         this.magicNumber = this.baseMagicNumber = 3;
-        if(AbstractDungeon.player != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
-            this.action = new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, this.magicNumber), this.magicNumber);
+        this.action = new AbstractGameAction() {
+        	@Override
+        	public void update() {
+        		addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, magicNumber), magicNumber));
+        		this.isDone = true;
+        	}
+        };
     }
 
     @Override
@@ -39,18 +42,19 @@ public class YuureiChop extends AbstractHealCard {
     	addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)p, (AbstractCreature)p, (AbstractPower)new DexterityPower((AbstractCreature)p, -1), -1));
     }
 
+    /*
     @Override
-    public void update() {
-        super.update();
-        if(this.action != null && AbstractDungeon.player != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
-            this.action = new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, this.magicNumber), this.magicNumber);
+	public void update() {
+    	super.update();
+    	if(AbstractDungeon.player != null)
+    		this.action = new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, this.magicNumber), this.magicNumber);
     }
+    */
+    
     @Override
     public void limitedUpgrade() {
         super.limitedUpgrade();
         this.upgradeDamage(6);
         this.upgradeMagicNumber(1);
-        if(this.action != null && AbstractDungeon.player != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
-            this.action = new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, this.magicNumber), this.magicNumber);
     }
 }

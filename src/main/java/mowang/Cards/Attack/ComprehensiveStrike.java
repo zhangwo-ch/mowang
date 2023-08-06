@@ -3,6 +3,7 @@ package mowang.Cards.Attack;
 import mowang.Action.MarchAction;
 import mowang.Action.ActionAction;
 import mowang.Action.DelayAAction;
+import mowang.Action.CallBackAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -27,7 +28,7 @@ public class ComprehensiveStrike extends AbstractExampleCard {
     public ComprehensiveStrike() {
         super(ID, ComprehensiveStrike.class.getSimpleName(),
                 cardStrings, 2, ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.tags.add(CardTags.STRIKE);
+        this.tags.add(AbstractCard.CardTags.STRIKE);
         this.damage = this.baseDamage = 12;
         this.magicNumber = this.baseMagicNumber = 5;
     }
@@ -37,7 +38,7 @@ public class ComprehensiveStrike extends AbstractExampleCard {
     	addToBot((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     	addToBot(new MarchAction(m));
     	addToBot(new ApplyPowerAction(m,p,new ServitorPower(m,magicNumber)));
-    	ModHelper.CanReturn(8,new DelayAAction(new ActionAction()));
+    	ModHelper.CanReturn(8,new DelayAAction(new CallBackAction()));
     }
     
     public void triggerOnGlowCheck() {

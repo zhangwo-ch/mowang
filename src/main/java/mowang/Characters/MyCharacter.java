@@ -27,7 +27,7 @@ import mowang.Relics.SoulEater;
 import java.util.ArrayList;
 
 public class MyCharacter extends CustomPlayer {
-    private static final String MY_CHARACTER_SHOULDER_1 = "ModExampleResources/img/char/shoulder1.png";
+    private static final String MY_CHARACTER_SHOULDER_1 = "ModExampleResources/img/char/shoulder.png";
     // 火堆的人物立绘（行动后）
     private static final String MY_CHARACTER_SHOULDER_2 = "ModExampleResources/img/char/shoulder2.png";
     // 人物死亡图像
@@ -66,7 +66,7 @@ public class MyCharacter extends CustomPlayer {
                 CORPSE_IMAGE, // 人物死亡图像
                 this.getLoadout(),
                 0.0F, 0.0F,
-                200.0F, 220.0F, // 人物碰撞箱大小，越大的人物模型这个越大
+                500, 375, // 人物碰撞箱大小，越大的人物模型这个越大
                 new EnergyManager(3) // 初始每回合的能量
         );
 

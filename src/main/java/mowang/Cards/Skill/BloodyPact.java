@@ -22,7 +22,7 @@ public class BloodyPact extends AbstractHealCard {
 
     public BloodyPact() {
         super(ID, BloodyPact.class.getSimpleName(),
-                cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE,null);
+                cardStrings, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.ALL_ENEMY,null);
         setupMagicNumber(3);
         tags.add(Recovery);
         action = new ActionAction();

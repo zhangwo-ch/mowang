@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import mowang.Cards.AbstractExampleCard;
 import mowang.Helpers.ModHelper;
+import mowang.Action.MarchAction;
+import mowang.Action.ActionAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 
@@ -33,9 +35,9 @@ public class DividingChop extends AbstractExampleCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     	addToBot((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-    	if (ModHelper.CanReturn(21,new EmptyAction())){
-    		addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)p, (AbstractCreature)p, (AbstractPower)new StrengthPower((AbstractCreature)p, this.magicNumber), this.magicNumber));
-    		addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)m, (AbstractCreature)p, (AbstractPower)new StrengthPower((AbstractCreature)m, -this.magicNumber), -this.magicNumber));
+    	if(ModHelper.CanReturn(21,new EmptyAction())) {
+    		addToBot(new MarchAction(m));
+    		addToBot(new ActionAction());
     	}
     }
     

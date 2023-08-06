@@ -12,20 +12,28 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import mowang.Action.DemonLookAction;
 import mowang.Action.GiveAllEnemyServitorAction;
+import mowang.Action.WraithStrikeHealAction;
 import mowang.Action.DelayAAction;
 import mowang.Action.DevibarrierAction;
-import mowang.Cards.AbstractExampleCard;
+import mowang.Cards.AbstractHealCard;
 import mowang.Helpers.ModHelper;
 
 import java.util.Iterator;
 
-public class Devibarrier extends AbstractExampleCard {
+public class Devibarrier extends AbstractHealCard {
     public static final String ID = ModHelper.MakePath(Devibarrier.class.getSimpleName());
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public Devibarrier() {
         super(ID, Devibarrier.class.getSimpleName(),
-                cardStrings, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+                cardStrings, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ALL_ENEMY, null);
+        this.action = new AbstractGameAction() {
+        	@Override
+        	public void update() {
+        		addToBot(new WraithStrikeHealAction(magicNumber));
+        		this.isDone = true;
+        	}
+        };
     }
 
     @Override

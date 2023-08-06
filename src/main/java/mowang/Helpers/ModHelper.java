@@ -7,14 +7,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import mowang.Cards.AbstractHealCard;
 
-import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Iterator;
 
 import static basemod.BaseMod.logger;
-import static basemod.DevConsole.log;
 import static mowang.Characters.MyCharacter.Enums.Recovery;
-import static mowang.Characters.MyCharacter.Enums.SIB;
 
 public class ModHelper {
     public static Boolean hasReturn;

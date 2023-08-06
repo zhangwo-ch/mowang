@@ -39,6 +39,7 @@ public class FlamePact extends AbstractHealCard {
                         c.retain = true;
                     }
                 }
+                isDone = true;
             }
         };
     }

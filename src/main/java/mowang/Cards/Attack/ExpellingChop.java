@@ -30,7 +30,7 @@ public class ExpellingChop extends AbstractExampleCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageToAllEnemies(AbstractGameAction.AttackEffect.FIRE);
-        ModHelper.CanReturn(8, new AbstractGameAction() {
+        ModHelper.CanReturn(9, new AbstractGameAction() {
             @Override
             public void update() {
                 addToBot(new ActionAction());

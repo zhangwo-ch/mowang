@@ -15,12 +15,14 @@ mowang\Cards\Attack\ComprehensiveStrike.class
 mowang\Action\GiveAllEnemyServitorAction.class
 mowang\Cards\Skill\DemonLookThrough$1.class
 mowang\Action\ActionAction.class
+mowang\Cards\Attack\Doragon$1.class
 mowang\Cards\Skill\DemonLookThrough.class
 mowang\Action\HikariAction.class
 mowang\Patches\SYO_ToDiscardPileActionPatch$PatchAddCardToDiscardTop.class
 mowang\Cards\Skill\Intuition.class
 mowang\Cards\Skill\DemonInMist.class
 mowang\Characters\MyCharacter.class
+mowang\Cards\Attack\StarringChop$1.class
 mowang\Cards\Attack\SealingChop.class
 mowang\Action\GainServitorByScryAction.class
 mowang\Cards\Attack\RainFall.class
@@ -40,11 +42,14 @@ mowang\Cards\Skill\BloodyPact.class
 mowang\Characters\MyCharacter$Enums.class
 mowang\Cards\Power\Skill1.class
 mowang\Action\DemonLookAction.class
+mowang\Cards\Attack\FlamingChop$1.class
 mowang\Cards\Skill\FlamePact.class
 mowang\Cards\Skill\DemonWithSigning.class
 mowang\Cards\Attack\FlameStrike.class
+mowang\Cards\Skill\Devibarrier$1.class
 mowang\Cards\Attack\FlamingChop.class
 mowang\Cards\Attack\PolarDay.class
+mowang\Cards\Attack\BloodyChops$1.class
 mowang\Action\HeavenAction.class
 mowang\Cards\Attack\DividingChop.class
 mowang\Cards\Attack\ExterminatingChop.class
@@ -95,6 +100,7 @@ mowang\Action\ReplaceBurnAction.class
 mowang\Cards\AbstractExampleCard$1.class
 mowang\Relics\SoulEater.class
 mowang\Patches\SryActionPatch$PolarDay.class
+mowang\Cards\Attack\YuureiChop$1.class
 mowang\Cards\Power\Attack1.class
 mowang\Cards\Skill\Devibarrier.class
 mowang\Cards\Skill\Devipower.class

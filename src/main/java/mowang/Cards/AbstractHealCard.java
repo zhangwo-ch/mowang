@@ -73,6 +73,7 @@ public abstract class AbstractHealCard extends AbstractExampleCard {
                 RecoveryIng = true;
                 addToTop(new ExhaustSpecificCardAction(c,
                         AbstractDungeon.player.hand, true));
+                action.isDone = false;
                 addToBot(action);//自愈的效果
                 addToBot(new KomorebiAction());//在这个加个aciotn
                 addToBot(new SetAHCFlagAction(this));
